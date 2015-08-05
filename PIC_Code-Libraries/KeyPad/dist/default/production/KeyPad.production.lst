@@ -1,0 +1,2755 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.32 build 58300 
+                                                                                               Wed Aug 05 22:44:30 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 58300
+     1                           	processor	16F877A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataBANK0,global,class=CODE,delta=2
+     5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     8                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    10                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    11                           	psect	maintext,global,class=CODE,split=1,delta=2
+    12                           	psect	text1,local,class=CODE,merge=1,delta=2
+    13                           	psect	text2,local,class=CODE,merge=1,delta=2
+    14                           	psect	text3,local,class=CODE,merge=1,delta=2
+    15                           	psect	text4,local,class=CODE,merge=1,delta=2
+    16                           	psect	text5,local,class=CODE,merge=1,delta=2
+    17                           	psect	text6,local,class=CODE,merge=1,delta=2
+    18                           	psect	text7,local,class=CODE,merge=1,delta=2
+    19                           	psect	text8,local,class=CODE,merge=1,delta=2
+    20                           	psect	text9,local,class=CODE,merge=1,delta=2
+    21                           	psect	text10,local,class=CODE,merge=1,delta=2
+    22                           	psect	text11,local,class=CODE,merge=1,delta=2
+    23                           	psect	text12,local,class=CODE,merge=1,delta=2
+    24                           	psect	text13,local,class=CODE,merge=1,delta=2
+    25                           	psect	text14,local,class=CODE,merge=1,delta=2
+    26                           	psect	text15,local,class=CODE,merge=1,delta=2
+    27                           	psect	text16,local,class=CODE,merge=1,delta=2
+    28                           	psect	text17,local,class=CODE,merge=1,delta=2
+    29                           	psect	text18,local,class=CODE,merge=1,delta=2
+    30                           	psect	text19,local,class=CODE,merge=1,delta=2
+    31                           	dabs	1,0x7E,2
+    32  0000                     	;# 
+    33  0001                     	;# 
+    34  0002                     	;# 
+    35  0003                     	;# 
+    36  0004                     	;# 
+    37  0005                     	;# 
+    38  0006                     	;# 
+    39  0007                     	;# 
+    40  0008                     	;# 
+    41  0009                     	;# 
+    42  000A                     	;# 
+    43  000B                     	;# 
+    44  000C                     	;# 
+    45  000D                     	;# 
+    46  000E                     	;# 
+    47  000E                     	;# 
+    48  000F                     	;# 
+    49  0010                     	;# 
+    50  0011                     	;# 
+    51  0012                     	;# 
+    52  0013                     	;# 
+    53  0014                     	;# 
+    54  0015                     	;# 
+    55  0015                     	;# 
+    56  0016                     	;# 
+    57  0017                     	;# 
+    58  0018                     	;# 
+    59  0019                     	;# 
+    60  001A                     	;# 
+    61  001B                     	;# 
+    62  001B                     	;# 
+    63  001C                     	;# 
+    64  001D                     	;# 
+    65  001E                     	;# 
+    66  001F                     	;# 
+    67  0081                     	;# 
+    68  0085                     	;# 
+    69  0086                     	;# 
+    70  0087                     	;# 
+    71  0088                     	;# 
+    72  0089                     	;# 
+    73  008C                     	;# 
+    74  008D                     	;# 
+    75  008E                     	;# 
+    76  0091                     	;# 
+    77  0092                     	;# 
+    78  0093                     	;# 
+    79  0094                     	;# 
+    80  0098                     	;# 
+    81  0099                     	;# 
+    82  009C                     	;# 
+    83  009D                     	;# 
+    84  009E                     	;# 
+    85  009F                     	;# 
+    86  010C                     	;# 
+    87  010D                     	;# 
+    88  010E                     	;# 
+    89  010F                     	;# 
+    90  018C                     	;# 
+    91  018D                     	;# 
+    92  0000                     	;# 
+    93  0001                     	;# 
+    94  0002                     	;# 
+    95  0003                     	;# 
+    96  0004                     	;# 
+    97  0005                     	;# 
+    98  0006                     	;# 
+    99  0007                     	;# 
+   100  0008                     	;# 
+   101  0009                     	;# 
+   102  000A                     	;# 
+   103  000B                     	;# 
+   104  000C                     	;# 
+   105  000D                     	;# 
+   106  000E                     	;# 
+   107  000E                     	;# 
+   108  000F                     	;# 
+   109  0010                     	;# 
+   110  0011                     	;# 
+   111  0012                     	;# 
+   112  0013                     	;# 
+   113  0014                     	;# 
+   114  0015                     	;# 
+   115  0015                     	;# 
+   116  0016                     	;# 
+   117  0017                     	;# 
+   118  0018                     	;# 
+   119  0019                     	;# 
+   120  001A                     	;# 
+   121  001B                     	;# 
+   122  001B                     	;# 
+   123  001C                     	;# 
+   124  001D                     	;# 
+   125  001E                     	;# 
+   126  001F                     	;# 
+   127  0081                     	;# 
+   128  0085                     	;# 
+   129  0086                     	;# 
+   130  0087                     	;# 
+   131  0088                     	;# 
+   132  0089                     	;# 
+   133  008C                     	;# 
+   134  008D                     	;# 
+   135  008E                     	;# 
+   136  0091                     	;# 
+   137  0092                     	;# 
+   138  0093                     	;# 
+   139  0094                     	;# 
+   140  0098                     	;# 
+   141  0099                     	;# 
+   142  009C                     	;# 
+   143  009D                     	;# 
+   144  009E                     	;# 
+   145  009F                     	;# 
+   146  010C                     	;# 
+   147  010D                     	;# 
+   148  010E                     	;# 
+   149  010F                     	;# 
+   150  018C                     	;# 
+   151  018D                     	;# 
+   152  0000                     	;# 
+   153  0001                     	;# 
+   154  0002                     	;# 
+   155  0003                     	;# 
+   156  0004                     	;# 
+   157  0005                     	;# 
+   158  0006                     	;# 
+   159  0007                     	;# 
+   160  0008                     	;# 
+   161  0009                     	;# 
+   162  000A                     	;# 
+   163  000B                     	;# 
+   164  000C                     	;# 
+   165  000D                     	;# 
+   166  000E                     	;# 
+   167  000E                     	;# 
+   168  000F                     	;# 
+   169  0010                     	;# 
+   170  0011                     	;# 
+   171  0012                     	;# 
+   172  0013                     	;# 
+   173  0014                     	;# 
+   174  0015                     	;# 
+   175  0015                     	;# 
+   176  0016                     	;# 
+   177  0017                     	;# 
+   178  0018                     	;# 
+   179  0019                     	;# 
+   180  001A                     	;# 
+   181  001B                     	;# 
+   182  001B                     	;# 
+   183  001C                     	;# 
+   184  001D                     	;# 
+   185  001E                     	;# 
+   186  001F                     	;# 
+   187  0081                     	;# 
+   188  0085                     	;# 
+   189  0086                     	;# 
+   190  0087                     	;# 
+   191  0088                     	;# 
+   192  0089                     	;# 
+   193  008C                     	;# 
+   194  008D                     	;# 
+   195  008E                     	;# 
+   196  0091                     	;# 
+   197  0092                     	;# 
+   198  0093                     	;# 
+   199  0094                     	;# 
+   200  0098                     	;# 
+   201  0099                     	;# 
+   202  009C                     	;# 
+   203  009D                     	;# 
+   204  009E                     	;# 
+   205  009F                     	;# 
+   206  010C                     	;# 
+   207  010D                     	;# 
+   208  010E                     	;# 
+   209  010F                     	;# 
+   210  018C                     	;# 
+   211  018D                     	;# 
+   212                           
+   213                           	psect	idataBANK0
+   214  049C                     __pidataBANK0:	
+   215                           
+   216                           ;initializer for _ARR_LcdLineNumAddress_U8
+   217  049C  3480               	retlw	128
+   218  049D  3480               	retlw	128
+   219  049E  34C0               	retlw	192
+   220  049F  3490               	retlw	144
+   221  04A0  34D0               	retlw	208
+   222                           
+   223                           	psect	nvBANK0
+   224  0025                     __pnvBANK0:	
+   225  0025                     _STK_LCDConfig:	
+   226  0025                     	ds	3
+   227  0007                     _PORTC	set	7
+   228  0008                     _PORTD	set	8
+   229  0087                     _TRISC	set	135
+   230  0088                     _TRISD	set	136
+   231                           
+   232                           ; #config settings
+   233  0000                     
+   234                           	psect	cinit
+   235  07DE                     start_initialization:	
+   236  07DE                     __initialization:	
+   237                           
+   238                           ; Clear objects allocated to BANK0
+   239  07DE  01A8               	clrf	__pbssBANK0& (0+127)
+   240  07DF  01A9               	clrf	(__pbssBANK0+1)& (0+127)
+   241                           
+   242                           ; Initialize objects allocated to BANK0
+   243  07E0  120A  118A  249C  120A  118A  	fcall	__pidataBANK0	;fetch initializer
+   244  07E5  00A0               	movwf	__pdataBANK0& (0+127)
+   245  07E6  120A  118A  249D  120A  118A  	fcall	__pidataBANK0+1	;fetch initializer
+   246  07EB  00A1               	movwf	(__pdataBANK0+1)& (0+127)
+   247  07EC  120A  118A  249E  120A  118A  	fcall	__pidataBANK0+2	;fetch initializer
+   248  07F1  00A2               	movwf	(__pdataBANK0+2)& (0+127)
+   249  07F2  120A  118A  249F  120A  118A  	fcall	__pidataBANK0+3	;fetch initializer
+   250  07F7  00A3               	movwf	(__pdataBANK0+3)& (0+127)
+   251  07F8  120A  118A  24A0   	fcall	__pidataBANK0+4	;fetch initializer
+   252  07FB  00A4               	movwf	(__pdataBANK0+4)& (0+127)
+   253  07FC                     end_of_initialization:	
+   254                           ;End of C runtime variable initialization code
+   255                           
+   256  07FC                     __end_of__initialization:	
+   257  07FC  0183               	clrf	3
+   258  07FD  120A  118A  2D8C   	ljmp	_main	;jump to C main() function
+   259                           
+   260                           	psect	bssBANK0
+   261  0028                     __pbssBANK0:	
+   262  0028                     _VAR_LcdTrackCursorPos_U8:	
+   263  0028                     	ds	1
+   264  0029                     _VAR_LcdTrackLineNum_U8:	
+   265  0029                     	ds	1
+   266                           
+   267                           	psect	dataBANK0
+   268  0020                     __pdataBANK0:	
+   269  0020                     _ARR_LcdLineNumAddress_U8:	
+   270  0020                     	ds	5
+   271                           
+   272                           	psect	cstackCOMMON
+   273  0070                     __pcstackCOMMON:	
+   274  0070                     ?_LCD_CmdWrite:	
+   275  0070                     ?_lcd_Reset:	
+   276                           ; 0 bytes @ 0x0
+   277                           
+   278  0070                     ?_LCD_Clear:	
+   279                           ; 0 bytes @ 0x0
+   280                           
+   281  0070                     ?_LCD_GoToLine:	
+   282                           ; 0 bytes @ 0x0
+   283                           
+   284  0070                     ?_lcd_BusyCheck:	
+   285                           ; 0 bytes @ 0x0
+   286                           
+   287  0070                     ?_lcd_SendCmdSignals:	
+   288                           ; 0 bytes @ 0x0
+   289                           
+   290  0070                     ?_lcd_SendNibble:	
+   291                           ; 0 bytes @ 0x0
+   292                           
+   293  0070                     ??_lcd_SendNibble:	
+   294                           ; 0 bytes @ 0x0
+   295                           
+   296  0070                     ?_lcd_DataWrite:	
+   297                           ; 0 bytes @ 0x0
+   298                           
+   299  0070                     ?_lcd_SendDataSignals:	
+   300                           ; 0 bytes @ 0x0
+   301                           
+   302  0070                     ?_DELAY_us:	
+   303                           ; 0 bytes @ 0x0
+   304                           
+   305  0070                     ?_KEYPAD_Init:	
+   306                           ; 0 bytes @ 0x0
+   307                           
+   308  0070                     ??_KEYPAD_Init:	
+   309                           ; 0 bytes @ 0x0
+   310                           
+   311  0070                     ?_KEYPAD_WaitForKeyRelease:	
+   312                           ; 0 bytes @ 0x0
+   313                           
+   314  0070                     ?_KEYPAD_WaitForKeyPress:	
+   315                           ; 0 bytes @ 0x0
+   316                           
+   317  0070                     ?_LCD_GoToNextLine:	
+   318                           ; 0 bytes @ 0x0
+   319                           
+   320  0070                     ?_LCD_DisplayChar:	
+   321                           ; 0 bytes @ 0x0
+   322                           
+   323  0070                     ?_keypad_ScanKey:	
+   324                           ; 0 bytes @ 0x0
+   325                           
+   326  0070                     ?_KEYPAD_GetKey:	
+   327                           ; 1 bytes @ 0x0
+   328                           
+   329  0070                     ?_main:	
+   330                           ; 1 bytes @ 0x0
+   331                           
+   332  0070                     DELAY_us@us_count:	
+   333                           ; 2 bytes @ 0x0
+   334                           
+   335                           
+   336                           ; 2 bytes @ 0x0
+   337  0070                     	ds	1
+   338  0071                     lcd_SendNibble@var:	
+   339                           
+   340                           ; 1 bytes @ 0x1
+   341  0071                     	ds	1
+   342  0072                     ??_lcd_BusyCheck:	
+   343  0072                     ??_lcd_SendCmdSignals:	
+   344                           ; 0 bytes @ 0x2
+   345                           
+   346  0072                     ??_lcd_SendDataSignals:	
+   347                           ; 0 bytes @ 0x2
+   348                           
+   349  0072                     ??_DELAY_us:	
+   350                           ; 0 bytes @ 0x2
+   351                           
+   352  0072                     ?_DELAY_ms:	
+   353                           ; 0 bytes @ 0x2
+   354                           
+   355  0072                     DELAY_ms@ms_count:	
+   356                           ; 0 bytes @ 0x2
+   357                           
+   358                           
+   359                           ; 2 bytes @ 0x2
+   360  0072                     	ds	1
+   361  0073                     lcd_BusyCheck@busyflag:	
+   362                           
+   363                           ; 1 bytes @ 0x3
+   364  0073                     	ds	1
+   365  0074                     ??_keypad_ScanKey:	
+   366  0074                     ??_LCD_CmdWrite:	
+   367                           ; 0 bytes @ 0x4
+   368                           
+   369  0074                     ??_lcd_Reset:	
+   370                           ; 0 bytes @ 0x4
+   371                           
+   372  0074                     ??_lcd_DataWrite:	
+   373                           ; 0 bytes @ 0x4
+   374                           
+   375  0074                     ??_DELAY_ms:	
+   376                           ; 0 bytes @ 0x4
+   377                           
+   378  0074                     ??_KEYPAD_WaitForKeyRelease:	
+   379                           ; 0 bytes @ 0x4
+   380                           
+   381  0074                     ??_KEYPAD_WaitForKeyPress:	
+   382                           ; 0 bytes @ 0x4
+   383                           
+   384                           
+   385                           ; 0 bytes @ 0x4
+   386  0074                     	ds	1
+   387  0075                     KEYPAD_WaitForKeyRelease@key:	
+   388  0075                     KEYPAD_WaitForKeyPress@var_keyPress_u8:	
+   389                           ; 1 bytes @ 0x5
+   390                           
+   391  0075                     LCD_CmdWrite@var_lcdCmd_u8:	
+   392                           ; 1 bytes @ 0x5
+   393                           
+   394  0075                     lcd_DataWrite@dat:	
+   395                           ; 1 bytes @ 0x5
+   396                           
+   397                           
+   398                           ; 1 bytes @ 0x5
+   399  0075                     	ds	1
+   400  0076                     ??_LCD_GoToLine:	
+   401  0076                     ??_LCD_GoToNextLine:	
+   402                           ; 0 bytes @ 0x6
+   403                           
+   404  0076                     keypad_ScanKey@i:	
+   405                           ; 0 bytes @ 0x6
+   406                           
+   407                           
+   408                           ; 1 bytes @ 0x6
+   409  0076                     	ds	1
+   410  0077                     ??_LCD_DisplayChar:	
+   411  0077                     keypad_ScanKey@var_keyScanCode_u8:	
+   412                           ; 0 bytes @ 0x7
+   413                           
+   414  0077                     LCD_GoToLine@var_lineNumber_u8:	
+   415                           ; 1 bytes @ 0x7
+   416                           
+   417                           
+   418                           ; 1 bytes @ 0x7
+   419  0077                     	ds	1
+   420  0078                     ??_LCD_Clear:	
+   421  0078                     ?_LCD_Init:	
+   422                           ; 0 bytes @ 0x8
+   423                           
+   424  0078                     keypad_ScanKey@var_keyPress_u8:	
+   425                           ; 0 bytes @ 0x8
+   426                           
+   427  0078                     LCD_Init@var_lcdNoOfLines_u8:	
+   428                           ; 1 bytes @ 0x8
+   429                           
+   430  0078                     LCD_DisplayChar@var_lcdData_u8:	
+   431                           ; 1 bytes @ 0x8
+   432                           
+   433                           
+   434                           ; 1 bytes @ 0x8
+   435  0078                     	ds	1
+   436  0079                     ??_KEYPAD_GetKey:	
+   437  0079                     LCD_Init@var_MaxCharsPerLine_u8:	
+   438                           ; 0 bytes @ 0x9
+   439                           
+   440                           
+   441                           ; 1 bytes @ 0x9
+   442  0079                     	ds	1
+   443  007A                     ??_LCD_Init:	
+   444  007A                     KEYPAD_GetKey@var_keyPress_u8:	
+   445                           ; 0 bytes @ 0xA
+   446                           
+   447                           
+   448                           ; 1 bytes @ 0xA
+   449  007A                     	ds	1
+   450  007B                     LCD_Init@var_lcdMode_u8:	
+   451                           
+   452                           ; 1 bytes @ 0xB
+   453  007B                     	ds	1
+   454  007C                     ??_main:	
+   455                           
+   456                           ; 0 bytes @ 0xC
+   457  007C                     	ds	2
+   458                           
+   459                           	psect	cstackBANK0
+   460  002A                     __pcstackBANK0:	
+   461  002A                     main@key:	
+   462                           
+   463                           ; 1 bytes @ 0x0
+   464  002A                     	ds	1
+   465                           
+   466                           	psect	maintext
+   467  058C                     __pmaintext:	
+   468 ;;
+   469 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   470 ;;
+   471 ;; *************** function _main *****************
+   472 ;; Defined at:
+   473 ;;		line 17 in file "main.c"
+   474 ;; Parameters:    Size  Location     Type
+   475 ;;		None
+   476 ;; Auto vars:     Size  Location     Type
+   477 ;;  key             1    0[BANK0 ] unsigned char 
+   478 ;; Return value:  Size  Location     Type
+   479 ;;                  2  198[COMMON] int 
+   480 ;; Registers used:
+   481 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   482 ;; Tracked objects:
+   483 ;;		On entry : 17F/0
+   484 ;;		On exit  : 0/0
+   485 ;;		Unchanged: 0/0
+   486 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   487 ;;      Params:         0       0       0       0       0
+   488 ;;      Locals:         0       1       0       0       0
+   489 ;;      Temps:          2       0       0       0       0
+   490 ;;      Totals:         2       1       0       0       0
+   491 ;;Total ram usage:        3 bytes
+   492 ;; Hardware stack levels required when called:    6
+   493 ;; This function calls:
+   494 ;;		_KEYPAD_GetKey
+   495 ;;		_KEYPAD_Init
+   496 ;;		_LCD_DisplayChar
+   497 ;;		_LCD_Init
+   498 ;; This function is called by:
+   499 ;;		Startup code after reset
+   500 ;; This function uses a non-reentrant model
+   501 ;;
+   502                           
+   503                           
+   504                           ;psect for function _main
+   505  058C                     _main:	
+   506                           
+   507                           ;main.c: 19: uint8_t key;
+   508                           ;main.c: 20: LCD_Init(8,2,16);
+   509                           
+   510                           ;incstack = 0
+   511                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   512  058C  3002               	movlw	2
+   513  058D  00FC               	movwf	??_main
+   514  058E  087C               	movf	??_main,w
+   515  058F  00F8               	movwf	LCD_Init@var_lcdNoOfLines_u8
+   516  0590  3010               	movlw	16
+   517  0591  00FD               	movwf	??_main+1
+   518  0592  087D               	movf	??_main+1,w
+   519  0593  00F9               	movwf	LCD_Init@var_MaxCharsPerLine_u8
+   520  0594  3008               	movlw	8
+   521  0595  120A  118A  26C6  120A  118A  	fcall	_LCD_Init
+   522                           
+   523                           ;main.c: 21: KEYPAD_Init();
+   524  059A  120A  118A  2497  120A  118A  	fcall	_KEYPAD_Init
+   525  059F                     l1231:	
+   526                           ;main.c: 23: while(1)
+   527                           
+   528                           
+   529                           ;main.c: 24: {
+   530                           ;main.c: 25: key = KEYPAD_GetKey();
+   531  059F  120A  118A  2769  120A  118A  	fcall	_KEYPAD_GetKey
+   532  05A4  00FC               	movwf	??_main
+   533  05A5  087C               	movf	??_main,w
+   534  05A6  1283               	bcf	3,5	;RP0=0, select bank0
+   535  05A7  1303               	bcf	3,6	;RP1=0, select bank0
+   536  05A8  00AA               	movwf	main@key
+   537                           
+   538                           ;main.c: 26: LCD_DisplayChar(key);
+   539  05A9  082A               	movf	main@key,w
+   540  05AA  120A  118A  2525  120A  118A  	fcall	_LCD_DisplayChar
+   541  05AF  2D9F               	goto	l1231
+   542  05B0                     __end_of_main:	
+   543                           ;main.c: 27: }
+   544                           ;main.c: 29: return 0;
+   545                           ;	Return value of _main is never used
+   546                           
+   547                           
+   548                           	psect	text1
+   549  06C6                     __ptext1:	
+   550 ;; *************** function _LCD_Init *****************
+   551 ;; Defined at:
+   552 ;;		line 112 in file "lcd.c"
+   553 ;; Parameters:    Size  Location     Type
+   554 ;;  var_lcdMode_    1    wreg     unsigned char 
+   555 ;;  var_lcdNoOfL    1    8[COMMON] unsigned char 
+   556 ;;  var_MaxChars    1    9[COMMON] unsigned char 
+   557 ;; Auto vars:     Size  Location     Type
+   558 ;;  var_lcdMode_    1   11[COMMON] unsigned char 
+   559 ;; Return value:  Size  Location     Type
+   560 ;;		None               void
+   561 ;; Registers used:
+   562 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   563 ;; Tracked objects:
+   564 ;;		On entry : 0/0
+   565 ;;		On exit  : 0/0
+   566 ;;		Unchanged: 0/0
+   567 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   568 ;;      Params:         2       0       0       0       0
+   569 ;;      Locals:         1       0       0       0       0
+   570 ;;      Temps:          1       0       0       0       0
+   571 ;;      Totals:         4       0       0       0       0
+   572 ;;Total ram usage:        4 bytes
+   573 ;; Hardware stack levels used:    1
+   574 ;; Hardware stack levels required when called:    5
+   575 ;; This function calls:
+   576 ;;		_DELAY_ms
+   577 ;;		_LCD_Clear
+   578 ;;		_LCD_CmdWrite
+   579 ;;		_lcd_Reset
+   580 ;; This function is called by:
+   581 ;;		_main
+   582 ;; This function uses a non-reentrant model
+   583 ;;
+   584                           
+   585                           
+   586                           ;psect for function _LCD_Init
+   587  06C6                     _LCD_Init:	
+   588                           
+   589                           ;incstack = 0
+   590                           ; Regs used in _LCD_Init: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   591                           ;LCD_Init@var_lcdMode_u8 stored from wreg
+   592  06C6  00FB               	movwf	LCD_Init@var_lcdMode_u8
+   593                           
+   594                           ;lcd.c: 116: TRISC = 0x00u;
+   595  06C7  1683               	bsf	3,5	;RP0=1, select bank1
+   596  06C8  1303               	bcf	3,6	;RP1=0, select bank1
+   597  06C9  0187               	clrf	7	;volatile
+   598                           
+   599                           ;lcd.c: 117: TRISD = 0x00u;
+   600  06CA  0188               	clrf	8	;volatile
+   601                           
+   602                           ;lcd.c: 118: STK_LCDConfig.mvar_LcdMode_U8 = var_lcdMode_u8;
+   603  06CB  087B               	movf	LCD_Init@var_lcdMode_u8,w
+   604  06CC  00FA               	movwf	??_LCD_Init
+   605  06CD  087A               	movf	??_LCD_Init,w
+   606  06CE  1283               	bcf	3,5	;RP0=0, select bank0
+   607  06CF  1303               	bcf	3,6	;RP1=0, select bank0
+   608  06D0  00A7               	movwf	_STK_LCDConfig+2
+   609                           
+   610                           ;lcd.c: 119: STK_LCDConfig.mvar_MaxSupportedChars_U8 = var_MaxCharsPerLine_u8;
+   611  06D1  0879               	movf	LCD_Init@var_MaxCharsPerLine_u8,w
+   612  06D2  00FA               	movwf	??_LCD_Init
+   613  06D3  087A               	movf	??_LCD_Init,w
+   614  06D4  00A6               	movwf	_STK_LCDConfig+1
+   615                           
+   616                           ;lcd.c: 120: STK_LCDConfig.mvar_MaxSupportedLines_U8 = var_lcdNoOfLines_u8;
+   617  06D5  0878               	movf	LCD_Init@var_lcdNoOfLines_u8,w
+   618  06D6  00FA               	movwf	??_LCD_Init
+   619  06D7  087A               	movf	??_LCD_Init,w
+   620  06D8  00A5               	movwf	_STK_LCDConfig
+   621                           
+   622                           ;lcd.c: 121: if(var_lcdNoOfLines_u8 > mENUM_LcdLineTwo)
+   623  06D9  3003               	movlw	3
+   624  06DA  0278               	subwf	LCD_Init@var_lcdNoOfLines_u8,w
+   625  06DB  1C03               	skipc
+   626  06DC  2EE9               	goto	l1195
+   627                           
+   628                           ;lcd.c: 122: {
+   629                           ;lcd.c: 123: ARR_LcdLineNumAddress_U8[mENUM_LcdLineThree] = 0x90 + (var_MaxCharsPerLine_
+      +                          u8 & 0x0fu);
+   630  06DD  0879               	movf	LCD_Init@var_MaxCharsPerLine_u8,w
+   631  06DE  390F               	andlw	15
+   632  06DF  3E90               	addlw	144
+   633  06E0  00FA               	movwf	??_LCD_Init
+   634  06E1  087A               	movf	??_LCD_Init,w
+   635  06E2  00A3               	movwf	_ARR_LcdLineNumAddress_U8+3
+   636                           
+   637                           ;lcd.c: 124: ARR_LcdLineNumAddress_U8[mENUM_LcdLineFour] = 0xd0 + (var_MaxCharsPerLine_u
+      +                          8 & 0x0fu);
+   638  06E3  0879               	movf	LCD_Init@var_MaxCharsPerLine_u8,w
+   639  06E4  390F               	andlw	15
+   640  06E5  3ED0               	addlw	208
+   641  06E6  00FA               	movwf	??_LCD_Init
+   642  06E7  087A               	movf	??_LCD_Init,w
+   643  06E8  00A4               	movwf	_ARR_LcdLineNumAddress_U8+4
+   644  06E9                     l1195:	
+   645                           
+   646                           ;lcd.c: 125: }
+   647                           ;lcd.c: 127: DELAY_ms(100);
+   648  06E9  3064               	movlw	100
+   649  06EA  00F2               	movwf	DELAY_ms@ms_count
+   650  06EB  3000               	movlw	0
+   651  06EC  00F3               	movwf	DELAY_ms@ms_count+1
+   652  06ED  120A  118A  24B7  120A  118A  	fcall	_DELAY_ms
+   653                           
+   654                           ;lcd.c: 129: if(STK_LCDConfig.mvar_LcdMode_U8 == 8u)
+   655  06F2  1283               	bcf	3,5	;RP0=0, select bank0
+   656  06F3  1303               	bcf	3,6	;RP1=0, select bank0
+   657  06F4  0827               	movf	_STK_LCDConfig+2,w
+   658  06F5  3A08               	xorlw	8
+   659  06F6  1D03               	skipz
+   660  06F7  2EFA               	goto	l1201
+   661                           
+   662                           ;lcd.c: 130: {
+   663                           ;lcd.c: 131: LCD_CmdWrite(0x38u);
+   664  06F8  3038               	movlw	56
+   665  06F9  2F06               	goto	L1
+   666  06FA                     l1201:	
+   667                           ;lcd.c: 132: }
+   668                           
+   669                           
+   670                           ;lcd.c: 133: else if(STK_LCDConfig.mvar_LcdMode_U8 == 4u)
+   671  06FA  1283               	bcf	3,5	;RP0=0, select bank0
+   672  06FB  1303               	bcf	3,6	;RP1=0, select bank0
+   673  06FC  0827               	movf	_STK_LCDConfig+2,w
+   674  06FD  3A04               	xorlw	4
+   675  06FE  1D03               	skipz
+   676  06FF  2F0B               	goto	l114
+   677                           
+   678                           ;lcd.c: 134: {
+   679                           ;lcd.c: 135: lcd_Reset();
+   680  0700  120A  118A  2677  120A  118A  	fcall	_lcd_Reset
+   681                           
+   682                           ;lcd.c: 136: LCD_CmdWrite(0x28u);
+   683  0705  3028               	movlw	40
+   684  0706                     L1:	
+   685  0706  120A  118A  260B  120A  118A  	fcall	_LCD_CmdWrite
+   686  070B                     l114:	
+   687                           
+   688                           ;lcd.c: 137: }
+   689                           ;lcd.c: 139: LCD_CmdWrite(0x0Eu);
+   690  070B  300E               	movlw	14
+   691  070C  120A  118A  260B  120A  118A  	fcall	_LCD_CmdWrite
+   692                           
+   693                           ;lcd.c: 140: LCD_Clear();
+   694  0711  120A  118A  24AC   	fcall	_LCD_Clear
+   695  0714  0008               	return
+   696  0715                     __end_of_LCD_Init:	
+   697                           
+   698                           	psect	text2
+   699  0677                     __ptext2:	
+   700 ;; *************** function _lcd_Reset *****************
+   701 ;; Defined at:
+   702 ;;		line 923 in file "lcd.c"
+   703 ;; Parameters:    Size  Location     Type
+   704 ;;		None
+   705 ;; Auto vars:     Size  Location     Type
+   706 ;;		None
+   707 ;; Return value:  Size  Location     Type
+   708 ;;		None               void
+   709 ;; Registers used:
+   710 ;;		wreg, status,2, status,0, pclath, cstack
+   711 ;; Tracked objects:
+   712 ;;		On entry : 0/0
+   713 ;;		On exit  : 0/0
+   714 ;;		Unchanged: 0/0
+   715 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   716 ;;      Params:         0       0       0       0       0
+   717 ;;      Locals:         0       0       0       0       0
+   718 ;;      Temps:          0       0       0       0       0
+   719 ;;      Totals:         0       0       0       0       0
+   720 ;;Total ram usage:        0 bytes
+   721 ;; Hardware stack levels used:    1
+   722 ;; Hardware stack levels required when called:    2
+   723 ;; This function calls:
+   724 ;;		_DELAY_ms
+   725 ;;		_DELAY_us
+   726 ;;		_lcd_SendCmdSignals
+   727 ;;		_lcd_SendNibble
+   728 ;; This function is called by:
+   729 ;;		_LCD_Init
+   730 ;; This function uses a non-reentrant model
+   731 ;;
+   732                           
+   733                           
+   734                           ;psect for function _lcd_Reset
+   735  0677                     _lcd_Reset:	
+   736                           
+   737                           ;lcd.c: 926: lcd_SendNibble(0x30);
+   738                           
+   739                           ;incstack = 0
+   740                           ; Regs used in _lcd_Reset: [wreg+status,2+status,0+pclath+cstack]
+   741  0677  3030               	movlw	48
+   742  0678  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+   743                           
+   744                           ;lcd.c: 927: lcd_SendCmdSignals();
+   745  067D  120A  118A  250C  120A  118A  	fcall	_lcd_SendCmdSignals
+   746                           
+   747                           ;lcd.c: 928: DELAY_ms(100);
+   748  0682  3064               	movlw	100
+   749  0683  00F2               	movwf	DELAY_ms@ms_count
+   750  0684  3000               	movlw	0
+   751  0685  00F3               	movwf	DELAY_ms@ms_count+1
+   752  0686  120A  118A  24B7  120A  118A  	fcall	_DELAY_ms
+   753                           
+   754                           ;lcd.c: 929: lcd_SendNibble(0x30);
+   755  068B  3030               	movlw	48
+   756  068C  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+   757                           
+   758                           ;lcd.c: 930: lcd_SendCmdSignals();
+   759  0691  120A  118A  250C  120A  118A  	fcall	_lcd_SendCmdSignals
+   760                           
+   761                           ;lcd.c: 931: DELAY_us(200);
+   762  0696  30C8               	movlw	200
+   763  0697  00F0               	movwf	DELAY_us@us_count
+   764  0698  3000               	movlw	0
+   765  0699  00F1               	movwf	DELAY_us@us_count+1
+   766  069A  120A  118A  24A1  120A  118A  	fcall	_DELAY_us
+   767                           
+   768                           ;lcd.c: 932: lcd_SendNibble(0x30);
+   769  069F  3030               	movlw	48
+   770  06A0  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+   771                           
+   772                           ;lcd.c: 933: lcd_SendCmdSignals();
+   773  06A5  120A  118A  250C  120A  118A  	fcall	_lcd_SendCmdSignals
+   774                           
+   775                           ;lcd.c: 934: DELAY_us(200);
+   776  06AA  30C8               	movlw	200
+   777  06AB  00F0               	movwf	DELAY_us@us_count
+   778  06AC  3000               	movlw	0
+   779  06AD  00F1               	movwf	DELAY_us@us_count+1
+   780  06AE  120A  118A  24A1  120A  118A  	fcall	_DELAY_us
+   781                           
+   782                           ;lcd.c: 935: lcd_SendNibble(0x20);
+   783  06B3  3020               	movlw	32
+   784  06B4  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+   785                           
+   786                           ;lcd.c: 936: lcd_SendCmdSignals();
+   787  06B9  120A  118A  250C  120A  118A  	fcall	_lcd_SendCmdSignals
+   788                           
+   789                           ;lcd.c: 937: DELAY_us(200);
+   790  06BE  30C8               	movlw	200
+   791  06BF  00F0               	movwf	DELAY_us@us_count
+   792  06C0  3000               	movlw	0
+   793  06C1  00F1               	movwf	DELAY_us@us_count+1
+   794  06C2  120A  118A  24A1   	fcall	_DELAY_us
+   795  06C5  0008               	return
+   796  06C6                     __end_of_lcd_Reset:	
+   797                           
+   798                           	psect	text3
+   799  04AC                     __ptext3:	
+   800 ;; *************** function _LCD_Clear *****************
+   801 ;; Defined at:
+   802 ;;		line 154 in file "lcd.c"
+   803 ;; Parameters:    Size  Location     Type
+   804 ;;		None
+   805 ;; Auto vars:     Size  Location     Type
+   806 ;;		None
+   807 ;; Return value:  Size  Location     Type
+   808 ;;		None               void
+   809 ;; Registers used:
+   810 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   811 ;; Tracked objects:
+   812 ;;		On entry : 0/0
+   813 ;;		On exit  : 0/0
+   814 ;;		Unchanged: 0/0
+   815 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   816 ;;      Params:         0       0       0       0       0
+   817 ;;      Locals:         0       0       0       0       0
+   818 ;;      Temps:          0       0       0       0       0
+   819 ;;      Totals:         0       0       0       0       0
+   820 ;;Total ram usage:        0 bytes
+   821 ;; Hardware stack levels used:    1
+   822 ;; Hardware stack levels required when called:    4
+   823 ;; This function calls:
+   824 ;;		_LCD_CmdWrite
+   825 ;;		_LCD_GoToLine
+   826 ;; This function is called by:
+   827 ;;		_LCD_Init
+   828 ;; This function uses a non-reentrant model
+   829 ;;
+   830                           
+   831                           
+   832                           ;psect for function _LCD_Clear
+   833  04AC                     _LCD_Clear:	
+   834                           
+   835                           ;lcd.c: 156: LCD_CmdWrite(0x01u);
+   836                           
+   837                           ;incstack = 0
+   838                           ; Regs used in _LCD_Clear: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   839  04AC  3001               	movlw	1
+   840  04AD  120A  118A  260B  120A  118A  	fcall	_LCD_CmdWrite
+   841                           
+   842                           ;lcd.c: 157: LCD_GoToLine(mENUM_LcdLineOne);
+   843  04B2  3001               	movlw	1
+   844  04B3  120A  118A  24CB   	fcall	_LCD_GoToLine
+   845  04B6  0008               	return
+   846  04B7                     __end_of_LCD_Clear:	
+   847                           
+   848                           	psect	text4
+   849  04CB                     __ptext4:	
+   850 ;; *************** function _LCD_GoToLine *****************
+   851 ;; Defined at:
+   852 ;;		line 181 in file "lcd.c"
+   853 ;; Parameters:    Size  Location     Type
+   854 ;;  var_lineNumb    1    wreg     unsigned char 
+   855 ;; Auto vars:     Size  Location     Type
+   856 ;;  var_lineNumb    1    7[COMMON] unsigned char 
+   857 ;; Return value:  Size  Location     Type
+   858 ;;		None               void
+   859 ;; Registers used:
+   860 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   861 ;; Tracked objects:
+   862 ;;		On entry : 0/0
+   863 ;;		On exit  : 0/0
+   864 ;;		Unchanged: 0/0
+   865 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   866 ;;      Params:         0       0       0       0       0
+   867 ;;      Locals:         1       0       0       0       0
+   868 ;;      Temps:          1       0       0       0       0
+   869 ;;      Totals:         2       0       0       0       0
+   870 ;;Total ram usage:        2 bytes
+   871 ;; Hardware stack levels used:    1
+   872 ;; Hardware stack levels required when called:    3
+   873 ;; This function calls:
+   874 ;;		_LCD_CmdWrite
+   875 ;; This function is called by:
+   876 ;;		_LCD_Clear
+   877 ;; This function uses a non-reentrant model
+   878 ;;
+   879                           
+   880                           
+   881                           ;psect for function _LCD_GoToLine
+   882  04CB                     _LCD_GoToLine:	
+   883                           
+   884                           ;incstack = 0
+   885                           ; Regs used in _LCD_GoToLine: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   886                           ;LCD_GoToLine@var_lineNumber_u8 stored from wreg
+   887  04CB  00F7               	movwf	LCD_GoToLine@var_lineNumber_u8
+   888                           
+   889                           ;lcd.c: 183: if(var_lineNumber_u8 <= STK_LCDConfig.mvar_MaxSupportedLines_U8)
+   890  04CC  0877               	movf	LCD_GoToLine@var_lineNumber_u8,w
+   891  04CD  1283               	bcf	3,5	;RP0=0, select bank0
+   892  04CE  1303               	bcf	3,6	;RP1=0, select bank0
+   893  04CF  0225               	subwf	_STK_LCDConfig,w
+   894  04D0  1C03               	skipc
+   895  04D1  0008               	return
+   896                           
+   897                           ;lcd.c: 184: {
+   898                           ;lcd.c: 187: VAR_LcdTrackCursorPos_U8 = 0x00;
+   899  04D2  01A8               	clrf	_VAR_LcdTrackCursorPos_U8
+   900                           
+   901                           ;lcd.c: 188: VAR_LcdTrackLineNum_U8 = var_lineNumber_u8;
+   902  04D3  0877               	movf	LCD_GoToLine@var_lineNumber_u8,w
+   903  04D4  00F6               	movwf	??_LCD_GoToLine
+   904  04D5  0876               	movf	??_LCD_GoToLine,w
+   905  04D6  00A9               	movwf	_VAR_LcdTrackLineNum_U8
+   906                           
+   907                           ;lcd.c: 189: LCD_CmdWrite(ARR_LcdLineNumAddress_U8[var_lineNumber_u8]);
+   908  04D7  0877               	movf	LCD_GoToLine@var_lineNumber_u8,w
+   909  04D8  3E20               	addlw	_ARR_LcdLineNumAddress_U8& (0+255)
+   910  04D9  0084               	movwf	4
+   911  04DA  1383               	bcf	3,7	;select IRP bank0
+   912  04DB  0800               	movf	0,w
+   913  04DC  120A  118A  260B   	fcall	_LCD_CmdWrite
+   914  04DF  0008               	return
+   915  04E0                     __end_of_LCD_GoToLine:	
+   916                           
+   917                           	psect	text5
+   918  0525                     __ptext5:	
+   919 ;; *************** function _LCD_DisplayChar *****************
+   920 ;; Defined at:
+   921 ;;		line 309 in file "lcd.c"
+   922 ;; Parameters:    Size  Location     Type
+   923 ;;  var_lcdData_    1    wreg     unsigned char 
+   924 ;; Auto vars:     Size  Location     Type
+   925 ;;  var_lcdData_    1    8[COMMON] unsigned char 
+   926 ;; Return value:  Size  Location     Type
+   927 ;;		None               void
+   928 ;; Registers used:
+   929 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   930 ;; Tracked objects:
+   931 ;;		On entry : 0/0
+   932 ;;		On exit  : 0/0
+   933 ;;		Unchanged: 0/0
+   934 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   935 ;;      Params:         0       0       0       0       0
+   936 ;;      Locals:         1       0       0       0       0
+   937 ;;      Temps:          1       0       0       0       0
+   938 ;;      Totals:         2       0       0       0       0
+   939 ;;Total ram usage:        2 bytes
+   940 ;; Hardware stack levels used:    1
+   941 ;; Hardware stack levels required when called:    4
+   942 ;; This function calls:
+   943 ;;		_LCD_GoToNextLine
+   944 ;;		_lcd_DataWrite
+   945 ;; This function is called by:
+   946 ;;		_main
+   947 ;; This function uses a non-reentrant model
+   948 ;;
+   949                           
+   950                           
+   951                           ;psect for function _LCD_DisplayChar
+   952  0525                     _LCD_DisplayChar:	
+   953                           
+   954                           ;incstack = 0
+   955                           ; Regs used in _LCD_DisplayChar: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   956                           ;LCD_DisplayChar@var_lcdData_u8 stored from wreg
+   957  0525  00F8               	movwf	LCD_DisplayChar@var_lcdData_u8
+   958                           
+   959                           ;lcd.c: 311: if((VAR_LcdTrackCursorPos_U8>=STK_LCDConfig.mvar_MaxSupportedChars_U8) || (
+      +                          var_lcdData_u8=='\n'))
+   960  0526  1283               	bcf	3,5	;RP0=0, select bank0
+   961  0527  1303               	bcf	3,6	;RP1=0, select bank0
+   962  0528  0826               	movf	_STK_LCDConfig+1,w
+   963  0529  0228               	subwf	_VAR_LcdTrackCursorPos_U8,w
+   964  052A  1803               	skipnc
+   965  052B  2D30               	goto	l1211
+   966  052C  0878               	movf	LCD_DisplayChar@var_lcdData_u8,w
+   967  052D  3A0A               	xorlw	10
+   968  052E  1D03               	skipz
+   969  052F  2D35               	goto	l1213
+   970  0530                     l1211:	
+   971                           
+   972                           ;lcd.c: 312: {
+   973                           ;lcd.c: 315: LCD_GoToNextLine();
+   974  0530  120A  118A  24E0  120A  118A  	fcall	_LCD_GoToNextLine
+   975  0535                     l1213:	
+   976                           
+   977                           ;lcd.c: 316: }
+   978                           ;lcd.c: 317: if(var_lcdData_u8!='\n')
+   979  0535  0878               	movf	LCD_DisplayChar@var_lcdData_u8,w
+   980  0536  3A0A               	xorlw	10
+   981  0537  1903               	skipnz
+   982  0538  0008               	return
+   983                           
+   984                           ;lcd.c: 318: {
+   985                           ;lcd.c: 320: lcd_DataWrite(var_lcdData_u8);
+   986  0539  0878               	movf	LCD_DisplayChar@var_lcdData_u8,w
+   987  053A  120A  118A  2641   	fcall	_lcd_DataWrite
+   988                           
+   989                           ;lcd.c: 321: VAR_LcdTrackCursorPos_U8++;
+   990  053D  3001               	movlw	1
+   991  053E  00F7               	movwf	??_LCD_DisplayChar
+   992  053F  0877               	movf	??_LCD_DisplayChar,w
+   993  0540  1283               	bcf	3,5	;RP0=0, select bank0
+   994  0541  1303               	bcf	3,6	;RP1=0, select bank0
+   995  0542  07A8               	addwf	_VAR_LcdTrackCursorPos_U8,f
+   996  0543  0008               	return
+   997  0544                     __end_of_LCD_DisplayChar:	
+   998                           
+   999                           	psect	text6
+  1000  0641                     __ptext6:	
+  1001 ;; *************** function _lcd_DataWrite *****************
+  1002 ;; Defined at:
+  1003 ;;		line 839 in file "lcd.c"
+  1004 ;; Parameters:    Size  Location     Type
+  1005 ;;  dat             1    wreg     unsigned char 
+  1006 ;; Auto vars:     Size  Location     Type
+  1007 ;;  dat             1    5[COMMON] unsigned char 
+  1008 ;; Return value:  Size  Location     Type
+  1009 ;;		None               void
+  1010 ;; Registers used:
+  1011 ;;		wreg, status,2, status,0, pclath, cstack
+  1012 ;; Tracked objects:
+  1013 ;;		On entry : 0/0
+  1014 ;;		On exit  : 0/0
+  1015 ;;		Unchanged: 0/0
+  1016 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1017 ;;      Params:         0       0       0       0       0
+  1018 ;;      Locals:         1       0       0       0       0
+  1019 ;;      Temps:          1       0       0       0       0
+  1020 ;;      Totals:         2       0       0       0       0
+  1021 ;;Total ram usage:        2 bytes
+  1022 ;; Hardware stack levels used:    1
+  1023 ;; Hardware stack levels required when called:    2
+  1024 ;; This function calls:
+  1025 ;;		_lcd_BusyCheck
+  1026 ;;		_lcd_SendDataSignals
+  1027 ;;		_lcd_SendNibble
+  1028 ;; This function is called by:
+  1029 ;;		_LCD_DisplayChar
+  1030 ;; This function uses a non-reentrant model
+  1031 ;;
+  1032                           
+  1033                           
+  1034                           ;psect for function _lcd_DataWrite
+  1035  0641                     _lcd_DataWrite:	
+  1036                           
+  1037                           ;incstack = 0
+  1038                           ; Regs used in _lcd_DataWrite: [wreg+status,2+status,0+pclath+cstack]
+  1039                           ;lcd_DataWrite@dat stored from wreg
+  1040  0641  00F5               	movwf	lcd_DataWrite@dat
+  1041                           
+  1042                           ;lcd.c: 841: lcd_BusyCheck();
+  1043  0642  120A  118A  2715  120A  118A  	fcall	_lcd_BusyCheck
+  1044                           
+  1045                           ;lcd.c: 842: if(STK_LCDConfig.mvar_LcdMode_U8 == 8u)
+  1046  0647  1283               	bcf	3,5	;RP0=0, select bank0
+  1047  0648  1303               	bcf	3,6	;RP1=0, select bank0
+  1048  0649  0827               	movf	_STK_LCDConfig+2,w
+  1049  064A  3A08               	xorlw	8
+  1050  064B  1D03               	skipz
+  1051  064C  2E53               	goto	l1133
+  1052                           
+  1053                           ;lcd.c: 843: {
+  1054                           ;lcd.c: 844: PORTC = dat;
+  1055  064D  0875               	movf	lcd_DataWrite@dat,w
+  1056  064E  0087               	movwf	7	;volatile
+  1057                           
+  1058                           ;lcd.c: 845: lcd_SendDataSignals();
+  1059  064F  120A  118A  24F6   	fcall	_lcd_SendDataSignals
+  1060                           
+  1061                           ;lcd.c: 846: }
+  1062  0652  0008               	return
+  1063  0653                     l1133:	
+  1064                           
+  1065                           ;lcd.c: 847: else if(STK_LCDConfig.mvar_LcdMode_U8 == 4u)
+  1066  0653  1283               	bcf	3,5	;RP0=0, select bank0
+  1067  0654  1303               	bcf	3,6	;RP1=0, select bank0
+  1068  0655  0827               	movf	_STK_LCDConfig+2,w
+  1069  0656  3A04               	xorlw	4
+  1070  0657  1D03               	skipz
+  1071  0658  0008               	return
+  1072                           
+  1073                           ;lcd.c: 848: {
+  1074                           ;lcd.c: 849: lcd_SendNibble(dat);
+  1075  0659  0875               	movf	lcd_DataWrite@dat,w
+  1076  065A  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+  1077                           
+  1078                           ;lcd.c: 850: lcd_SendDataSignals();
+  1079  065F  120A  118A  24F6  120A  118A  	fcall	_lcd_SendDataSignals
+  1080                           
+  1081                           ;lcd.c: 852: lcd_SendNibble(dat << 4);
+  1082  0664  0875               	movf	lcd_DataWrite@dat,w
+  1083  0665  00F4               	movwf	??_lcd_DataWrite
+  1084  0666  3003               	movlw	3
+  1085  0667                     u535:	
+  1086  0667  1003               	clrc
+  1087  0668  0DF4               	rlf	??_lcd_DataWrite,f
+  1088  0669  3EFF               	addlw	-1
+  1089  066A  1D03               	skipz
+  1090  066B  2E67               	goto	u535
+  1091  066C  1003               	clrc
+  1092  066D  0D74               	rlf	??_lcd_DataWrite,w
+  1093  066E  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+  1094                           
+  1095                           ;lcd.c: 853: lcd_SendDataSignals();
+  1096  0673  120A  118A  24F6   	fcall	_lcd_SendDataSignals
+  1097  0676  0008               	return
+  1098  0677                     __end_of_lcd_DataWrite:	
+  1099                           
+  1100                           	psect	text7
+  1101  04F6                     __ptext7:	
+  1102 ;; *************** function _lcd_SendDataSignals *****************
+  1103 ;; Defined at:
+  1104 ;;		line 994 in file "lcd.c"
+  1105 ;; Parameters:    Size  Location     Type
+  1106 ;;		None
+  1107 ;; Auto vars:     Size  Location     Type
+  1108 ;;		None
+  1109 ;; Return value:  Size  Location     Type
+  1110 ;;		None               void
+  1111 ;; Registers used:
+  1112 ;;		wreg, status,2, status,0, pclath, cstack
+  1113 ;; Tracked objects:
+  1114 ;;		On entry : 0/0
+  1115 ;;		On exit  : 0/0
+  1116 ;;		Unchanged: 0/0
+  1117 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1118 ;;      Params:         0       0       0       0       0
+  1119 ;;      Locals:         0       0       0       0       0
+  1120 ;;      Temps:          1       0       0       0       0
+  1121 ;;      Totals:         1       0       0       0       0
+  1122 ;;Total ram usage:        1 bytes
+  1123 ;; Hardware stack levels used:    1
+  1124 ;; Hardware stack levels required when called:    1
+  1125 ;; This function calls:
+  1126 ;;		_DELAY_us
+  1127 ;; This function is called by:
+  1128 ;;		_lcd_DataWrite
+  1129 ;; This function uses a non-reentrant model
+  1130 ;;
+  1131                           
+  1132                           
+  1133                           ;psect for function _lcd_SendDataSignals
+  1134  04F6                     _lcd_SendDataSignals:	
+  1135                           
+  1136                           ;lcd.c: 996: (((PORTD)) |= (1<<((0))));
+  1137                           
+  1138                           ;incstack = 0
+  1139                           ; Regs used in _lcd_SendDataSignals: [wreg+status,2+status,0+pclath+cstack]
+  1140  04F6  1283               	bcf	3,5	;RP0=0, select bank0
+  1141  04F7  1303               	bcf	3,6	;RP1=0, select bank0
+  1142  04F8  1408               	bsf	8,0	;volatile
+  1143                           
+  1144                           ;lcd.c: 998: (((PORTD)) &= ~(1<<((1))));
+  1145  04F9  30FD               	movlw	253
+  1146  04FA  00F2               	movwf	??_lcd_SendDataSignals
+  1147  04FB  0872               	movf	??_lcd_SendDataSignals,w
+  1148  04FC  0588               	andwf	8,f	;volatile
+  1149                           
+  1150                           ;lcd.c: 1000: (((PORTD)) |= (1<<((2))));
+  1151  04FD  1508               	bsf	8,2	;volatile
+  1152                           
+  1153                           ;lcd.c: 1001: DELAY_us(10);
+  1154  04FE  300A               	movlw	10
+  1155  04FF  00F0               	movwf	DELAY_us@us_count
+  1156  0500  3000               	movlw	0
+  1157  0501  00F1               	movwf	DELAY_us@us_count+1
+  1158  0502  120A  118A  24A1   	fcall	_DELAY_us
+  1159                           
+  1160                           ;lcd.c: 1002: (((PORTD)) &= ~(1<<((2))));
+  1161  0505  30FB               	movlw	251
+  1162  0506  00F2               	movwf	??_lcd_SendDataSignals
+  1163  0507  0872               	movf	??_lcd_SendDataSignals,w
+  1164  0508  1283               	bcf	3,5	;RP0=0, select bank0
+  1165  0509  1303               	bcf	3,6	;RP1=0, select bank0
+  1166  050A  0588               	andwf	8,f	;volatile
+  1167  050B  0008               	return
+  1168  050C                     __end_of_lcd_SendDataSignals:	
+  1169                           
+  1170                           	psect	text8
+  1171  04E0                     __ptext8:	
+  1172 ;; *************** function _LCD_GoToNextLine *****************
+  1173 ;; Defined at:
+  1174 ;;		line 208 in file "lcd.c"
+  1175 ;; Parameters:    Size  Location     Type
+  1176 ;;		None
+  1177 ;; Auto vars:     Size  Location     Type
+  1178 ;;		None
+  1179 ;; Return value:  Size  Location     Type
+  1180 ;;		None               void
+  1181 ;; Registers used:
+  1182 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1183 ;; Tracked objects:
+  1184 ;;		On entry : 0/0
+  1185 ;;		On exit  : 0/0
+  1186 ;;		Unchanged: 0/0
+  1187 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1188 ;;      Params:         0       0       0       0       0
+  1189 ;;      Locals:         0       0       0       0       0
+  1190 ;;      Temps:          1       0       0       0       0
+  1191 ;;      Totals:         1       0       0       0       0
+  1192 ;;Total ram usage:        1 bytes
+  1193 ;; Hardware stack levels used:    1
+  1194 ;; Hardware stack levels required when called:    3
+  1195 ;; This function calls:
+  1196 ;;		_LCD_CmdWrite
+  1197 ;; This function is called by:
+  1198 ;;		_LCD_DisplayChar
+  1199 ;; This function uses a non-reentrant model
+  1200 ;;
+  1201                           
+  1202                           
+  1203                           ;psect for function _LCD_GoToNextLine
+  1204  04E0                     _LCD_GoToNextLine:	
+  1205                           
+  1206                           ;lcd.c: 212: VAR_LcdTrackLineNum_U8++;
+  1207                           
+  1208                           ;incstack = 0
+  1209                           ; Regs used in _LCD_GoToNextLine: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1210  04E0  3001               	movlw	1
+  1211  04E1  00F6               	movwf	??_LCD_GoToNextLine
+  1212  04E2  0876               	movf	??_LCD_GoToNextLine,w
+  1213  04E3  1283               	bcf	3,5	;RP0=0, select bank0
+  1214  04E4  1303               	bcf	3,6	;RP1=0, select bank0
+  1215  04E5  07A9               	addwf	_VAR_LcdTrackLineNum_U8,f
+  1216                           
+  1217                           ;lcd.c: 213: VAR_LcdTrackCursorPos_U8 = 0x00;
+  1218  04E6  01A8               	clrf	_VAR_LcdTrackCursorPos_U8
+  1219                           
+  1220                           ;lcd.c: 214: if(VAR_LcdTrackLineNum_U8 > STK_LCDConfig.mvar_MaxSupportedLines_U8)
+  1221  04E7  0829               	movf	_VAR_LcdTrackLineNum_U8,w
+  1222  04E8  0225               	subwf	_STK_LCDConfig,w
+  1223  04E9  1803               	skipnc
+  1224  04EA  2CED               	goto	l1123
+  1225                           
+  1226                           ;lcd.c: 215: VAR_LcdTrackLineNum_U8 = 0x01;
+  1227  04EB  01A9               	clrf	_VAR_LcdTrackLineNum_U8
+  1228  04EC  0AA9               	incf	_VAR_LcdTrackLineNum_U8,f
+  1229  04ED                     l1123:	
+  1230                           
+  1231                           ;lcd.c: 216: LCD_CmdWrite(ARR_LcdLineNumAddress_U8[VAR_LcdTrackLineNum_U8]);
+  1232  04ED  0829               	movf	_VAR_LcdTrackLineNum_U8,w
+  1233  04EE  3E20               	addlw	_ARR_LcdLineNumAddress_U8& (0+255)
+  1234  04EF  0084               	movwf	4
+  1235  04F0  1383               	bcf	3,7	;select IRP bank0
+  1236  04F1  0800               	movf	0,w
+  1237  04F2  120A  118A  260B   	fcall	_LCD_CmdWrite
+  1238  04F5  0008               	return
+  1239  04F6                     __end_of_LCD_GoToNextLine:	
+  1240                           
+  1241                           	psect	text9
+  1242  060B                     __ptext9:	
+  1243 ;; *************** function _LCD_CmdWrite *****************
+  1244 ;; Defined at:
+  1245 ;;		line 274 in file "lcd.c"
+  1246 ;; Parameters:    Size  Location     Type
+  1247 ;;  var_lcdCmd_u    1    wreg     unsigned char 
+  1248 ;; Auto vars:     Size  Location     Type
+  1249 ;;  var_lcdCmd_u    1    5[COMMON] unsigned char 
+  1250 ;; Return value:  Size  Location     Type
+  1251 ;;		None               void
+  1252 ;; Registers used:
+  1253 ;;		wreg, status,2, status,0, pclath, cstack
+  1254 ;; Tracked objects:
+  1255 ;;		On entry : 0/0
+  1256 ;;		On exit  : 0/0
+  1257 ;;		Unchanged: 0/0
+  1258 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1259 ;;      Params:         0       0       0       0       0
+  1260 ;;      Locals:         1       0       0       0       0
+  1261 ;;      Temps:          1       0       0       0       0
+  1262 ;;      Totals:         2       0       0       0       0
+  1263 ;;Total ram usage:        2 bytes
+  1264 ;; Hardware stack levels used:    1
+  1265 ;; Hardware stack levels required when called:    2
+  1266 ;; This function calls:
+  1267 ;;		_lcd_BusyCheck
+  1268 ;;		_lcd_SendCmdSignals
+  1269 ;;		_lcd_SendNibble
+  1270 ;; This function is called by:
+  1271 ;;		_LCD_Init
+  1272 ;;		_LCD_Clear
+  1273 ;;		_LCD_GoToLine
+  1274 ;;		_LCD_GoToNextLine
+  1275 ;; This function uses a non-reentrant model
+  1276 ;;
+  1277                           
+  1278                           
+  1279                           ;psect for function _LCD_CmdWrite
+  1280  060B                     _LCD_CmdWrite:	
+  1281                           
+  1282                           ;incstack = 0
+  1283                           ; Regs used in _LCD_CmdWrite: [wreg+status,2+status,0+pclath+cstack]
+  1284                           ;LCD_CmdWrite@var_lcdCmd_u8 stored from wreg
+  1285  060B  00F5               	movwf	LCD_CmdWrite@var_lcdCmd_u8
+  1286                           
+  1287                           ;lcd.c: 276: lcd_BusyCheck();
+  1288  060C  120A  118A  2715  120A  118A  	fcall	_lcd_BusyCheck
+  1289                           
+  1290                           ;lcd.c: 277: if(STK_LCDConfig.mvar_LcdMode_U8 == 8u)
+  1291  0611  1283               	bcf	3,5	;RP0=0, select bank0
+  1292  0612  1303               	bcf	3,6	;RP1=0, select bank0
+  1293  0613  0827               	movf	_STK_LCDConfig+2,w
+  1294  0614  3A08               	xorlw	8
+  1295  0615  1D03               	skipz
+  1296  0616  2E1D               	goto	l1023
+  1297                           
+  1298                           ;lcd.c: 278: {
+  1299                           ;lcd.c: 280: PORTC = var_lcdCmd_u8;
+  1300  0617  0875               	movf	LCD_CmdWrite@var_lcdCmd_u8,w
+  1301  0618  0087               	movwf	7	;volatile
+  1302                           
+  1303                           ;lcd.c: 281: lcd_SendCmdSignals();
+  1304  0619  120A  118A  250C   	fcall	_lcd_SendCmdSignals
+  1305                           
+  1306                           ;lcd.c: 282: }
+  1307  061C  0008               	return
+  1308  061D                     l1023:	
+  1309                           
+  1310                           ;lcd.c: 283: else if(STK_LCDConfig.mvar_LcdMode_U8 == 4u)
+  1311  061D  1283               	bcf	3,5	;RP0=0, select bank0
+  1312  061E  1303               	bcf	3,6	;RP1=0, select bank0
+  1313  061F  0827               	movf	_STK_LCDConfig+2,w
+  1314  0620  3A04               	xorlw	4
+  1315  0621  1D03               	skipz
+  1316  0622  0008               	return
+  1317                           
+  1318                           ;lcd.c: 284: {
+  1319                           ;lcd.c: 285: lcd_SendNibble(var_lcdCmd_u8);
+  1320  0623  0875               	movf	LCD_CmdWrite@var_lcdCmd_u8,w
+  1321  0624  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+  1322                           
+  1323                           ;lcd.c: 286: lcd_SendCmdSignals();
+  1324  0629  120A  118A  250C  120A  118A  	fcall	_lcd_SendCmdSignals
+  1325                           
+  1326                           ;lcd.c: 288: lcd_SendNibble(var_lcdCmd_u8 << 4);
+  1327  062E  0875               	movf	LCD_CmdWrite@var_lcdCmd_u8,w
+  1328  062F  00F4               	movwf	??_LCD_CmdWrite
+  1329  0630  3003               	movlw	3
+  1330  0631                     u405:	
+  1331  0631  1003               	clrc
+  1332  0632  0DF4               	rlf	??_LCD_CmdWrite,f
+  1333  0633  3EFF               	addlw	-1
+  1334  0634  1D03               	skipz
+  1335  0635  2E31               	goto	u405
+  1336  0636  1003               	clrc
+  1337  0637  0D74               	rlf	??_LCD_CmdWrite,w
+  1338  0638  120A  118A  25B0  120A  118A  	fcall	_lcd_SendNibble
+  1339                           
+  1340                           ;lcd.c: 289: lcd_SendCmdSignals();
+  1341  063D  120A  118A  250C   	fcall	_lcd_SendCmdSignals
+  1342  0640  0008               	return
+  1343  0641                     __end_of_LCD_CmdWrite:	
+  1344                           
+  1345                           	psect	text10
+  1346  05B0                     __ptext10:	
+  1347 ;; *************** function _lcd_SendNibble *****************
+  1348 ;; Defined at:
+  1349 ;;		line 953 in file "lcd.c"
+  1350 ;; Parameters:    Size  Location     Type
+  1351 ;;  var             1    wreg     unsigned char 
+  1352 ;; Auto vars:     Size  Location     Type
+  1353 ;;  var             1    1[COMMON] unsigned char 
+  1354 ;; Return value:  Size  Location     Type
+  1355 ;;		None               void
+  1356 ;; Registers used:
+  1357 ;;		wreg, status,2, status,0
+  1358 ;; Tracked objects:
+  1359 ;;		On entry : 0/0
+  1360 ;;		On exit  : 0/0
+  1361 ;;		Unchanged: 0/0
+  1362 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1363 ;;      Params:         0       0       0       0       0
+  1364 ;;      Locals:         1       0       0       0       0
+  1365 ;;      Temps:          1       0       0       0       0
+  1366 ;;      Totals:         2       0       0       0       0
+  1367 ;;Total ram usage:        2 bytes
+  1368 ;; Hardware stack levels used:    1
+  1369 ;; This function calls:
+  1370 ;;		Nothing
+  1371 ;; This function is called by:
+  1372 ;;		_LCD_CmdWrite
+  1373 ;;		_lcd_DataWrite
+  1374 ;;		_lcd_Reset
+  1375 ;; This function uses a non-reentrant model
+  1376 ;;
+  1377                           
+  1378                           
+  1379                           ;psect for function _lcd_SendNibble
+  1380  05B0                     _lcd_SendNibble:	
+  1381                           
+  1382                           ;incstack = 0
+  1383                           ; Regs used in _lcd_SendNibble: [wreg+status,2+status,0]
+  1384                           ;lcd_SendNibble@var stored from wreg
+  1385  05B0  00F1               	movwf	lcd_SendNibble@var
+  1386                           
+  1387                           ;lcd.c: 955: (((((var)&((1<<(4))))!=0u))? ((PORTC) |= (1<<(4))): ((PORTC) &= ~(1<<(4))))
+      +                          ;
+  1388  05B1  1E71               	btfss	lcd_SendNibble@var,4
+  1389  05B2  2DB7               	goto	l995
+  1390  05B3  1283               	bcf	3,5	;RP0=0, select bank0
+  1391  05B4  1303               	bcf	3,6	;RP1=0, select bank0
+  1392  05B5  1607               	bsf	7,4	;volatile
+  1393  05B6  2DBD               	goto	l997
+  1394  05B7                     l995:	
+  1395  05B7  30EF               	movlw	239
+  1396  05B8  00F0               	movwf	??_lcd_SendNibble
+  1397  05B9  0870               	movf	??_lcd_SendNibble,w
+  1398  05BA  1283               	bcf	3,5	;RP0=0, select bank0
+  1399  05BB  1303               	bcf	3,6	;RP1=0, select bank0
+  1400  05BC  0587               	andwf	7,f	;volatile
+  1401  05BD                     l997:	
+  1402                           
+  1403                           ;lcd.c: 956: (((((var)&((1<<(5))))!=0u))? ((PORTC) |= (1<<(5))): ((PORTC) &= ~(1<<(5))))
+      +                          ;
+  1404  05BD  1EF1               	btfss	lcd_SendNibble@var,5
+  1405  05BE  2DC1               	goto	l1001
+  1406  05BF  1687               	bsf	7,5	;volatile
+  1407  05C0  2DC5               	goto	l1003
+  1408  05C1                     l1001:	
+  1409  05C1  30DF               	movlw	223
+  1410  05C2  00F0               	movwf	??_lcd_SendNibble
+  1411  05C3  0870               	movf	??_lcd_SendNibble,w
+  1412  05C4  0587               	andwf	7,f	;volatile
+  1413  05C5                     l1003:	
+  1414                           
+  1415                           ;lcd.c: 957: (((((var)&((1<<(6))))!=0u))? ((PORTC) |= (1<<(6))): ((PORTC) &= ~(1<<(6))))
+      +                          ;
+  1416  05C5  1F71               	btfss	lcd_SendNibble@var,6
+  1417  05C6  2DC9               	goto	l1007
+  1418  05C7  1707               	bsf	7,6	;volatile
+  1419  05C8  2DCD               	goto	l1009
+  1420  05C9                     l1007:	
+  1421  05C9  30BF               	movlw	191
+  1422  05CA  00F0               	movwf	??_lcd_SendNibble
+  1423  05CB  0870               	movf	??_lcd_SendNibble,w
+  1424  05CC  0587               	andwf	7,f	;volatile
+  1425  05CD                     l1009:	
+  1426                           
+  1427                           ;lcd.c: 958: (((((var)&((1<<(7))))!=0u))? ((PORTC) |= (1<<(7))): ((PORTC) &= ~(1<<(7))))
+      +                          ;
+  1428  05CD  1FF1               	btfss	lcd_SendNibble@var,7
+  1429  05CE  2DD1               	goto	l1013
+  1430  05CF  1787               	bsf	7,7	;volatile
+  1431  05D0  0008               	return
+  1432  05D1                     l1013:	
+  1433  05D1  307F               	movlw	127
+  1434  05D2  00F0               	movwf	??_lcd_SendNibble
+  1435  05D3  0870               	movf	??_lcd_SendNibble,w
+  1436  05D4  0587               	andwf	7,f	;volatile
+  1437  05D5  0008               	return
+  1438  05D6                     __end_of_lcd_SendNibble:	
+  1439                           
+  1440                           	psect	text11
+  1441  050C                     __ptext11:	
+  1442 ;; *************** function _lcd_SendCmdSignals *****************
+  1443 ;; Defined at:
+  1444 ;;		line 972 in file "lcd.c"
+  1445 ;; Parameters:    Size  Location     Type
+  1446 ;;		None
+  1447 ;; Auto vars:     Size  Location     Type
+  1448 ;;		None
+  1449 ;; Return value:  Size  Location     Type
+  1450 ;;		None               void
+  1451 ;; Registers used:
+  1452 ;;		wreg, status,2, status,0, pclath, cstack
+  1453 ;; Tracked objects:
+  1454 ;;		On entry : 0/0
+  1455 ;;		On exit  : 0/0
+  1456 ;;		Unchanged: 0/0
+  1457 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1458 ;;      Params:         0       0       0       0       0
+  1459 ;;      Locals:         0       0       0       0       0
+  1460 ;;      Temps:          1       0       0       0       0
+  1461 ;;      Totals:         1       0       0       0       0
+  1462 ;;Total ram usage:        1 bytes
+  1463 ;; Hardware stack levels used:    1
+  1464 ;; Hardware stack levels required when called:    1
+  1465 ;; This function calls:
+  1466 ;;		_DELAY_us
+  1467 ;; This function is called by:
+  1468 ;;		_LCD_CmdWrite
+  1469 ;;		_lcd_Reset
+  1470 ;; This function uses a non-reentrant model
+  1471 ;;
+  1472                           
+  1473                           
+  1474                           ;psect for function _lcd_SendCmdSignals
+  1475  050C                     _lcd_SendCmdSignals:	
+  1476                           
+  1477                           ;lcd.c: 974: (((PORTD)) &= ~(1<<((0))));
+  1478                           
+  1479                           ;incstack = 0
+  1480                           ; Regs used in _lcd_SendCmdSignals: [wreg+status,2+status,0+pclath+cstack]
+  1481  050C  30FE               	movlw	254
+  1482  050D  00F2               	movwf	??_lcd_SendCmdSignals
+  1483  050E  0872               	movf	??_lcd_SendCmdSignals,w
+  1484  050F  1283               	bcf	3,5	;RP0=0, select bank0
+  1485  0510  1303               	bcf	3,6	;RP1=0, select bank0
+  1486  0511  0588               	andwf	8,f	;volatile
+  1487                           
+  1488                           ;lcd.c: 976: (((PORTD)) &= ~(1<<((1))));
+  1489  0512  30FD               	movlw	253
+  1490  0513  00F2               	movwf	??_lcd_SendCmdSignals
+  1491  0514  0872               	movf	??_lcd_SendCmdSignals,w
+  1492  0515  0588               	andwf	8,f	;volatile
+  1493                           
+  1494                           ;lcd.c: 978: (((PORTD)) |= (1<<((2))));
+  1495  0516  1508               	bsf	8,2	;volatile
+  1496                           
+  1497                           ;lcd.c: 979: DELAY_us(10);
+  1498  0517  300A               	movlw	10
+  1499  0518  00F0               	movwf	DELAY_us@us_count
+  1500  0519  3000               	movlw	0
+  1501  051A  00F1               	movwf	DELAY_us@us_count+1
+  1502  051B  120A  118A  24A1   	fcall	_DELAY_us
+  1503                           
+  1504                           ;lcd.c: 980: (((PORTD)) &= ~(1<<((2))));
+  1505  051E  30FB               	movlw	251
+  1506  051F  00F2               	movwf	??_lcd_SendCmdSignals
+  1507  0520  0872               	movf	??_lcd_SendCmdSignals,w
+  1508  0521  1283               	bcf	3,5	;RP0=0, select bank0
+  1509  0522  1303               	bcf	3,6	;RP1=0, select bank0
+  1510  0523  0588               	andwf	8,f	;volatile
+  1511  0524  0008               	return
+  1512  0525                     __end_of_lcd_SendCmdSignals:	
+  1513                           
+  1514                           	psect	text12
+  1515  0715                     __ptext12:	
+  1516 ;; *************** function _lcd_BusyCheck *****************
+  1517 ;; Defined at:
+  1518 ;;		line 873 in file "lcd.c"
+  1519 ;; Parameters:    Size  Location     Type
+  1520 ;;		None
+  1521 ;; Auto vars:     Size  Location     Type
+  1522 ;;  busyflag        1    3[COMMON] unsigned char 
+  1523 ;; Return value:  Size  Location     Type
+  1524 ;;		None               void
+  1525 ;; Registers used:
+  1526 ;;		wreg, status,2, status,0, pclath, cstack
+  1527 ;; Tracked objects:
+  1528 ;;		On entry : 0/0
+  1529 ;;		On exit  : 0/0
+  1530 ;;		Unchanged: 0/0
+  1531 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1532 ;;      Params:         0       0       0       0       0
+  1533 ;;      Locals:         1       0       0       0       0
+  1534 ;;      Temps:          1       0       0       0       0
+  1535 ;;      Totals:         2       0       0       0       0
+  1536 ;;Total ram usage:        2 bytes
+  1537 ;; Hardware stack levels used:    1
+  1538 ;; Hardware stack levels required when called:    1
+  1539 ;; This function calls:
+  1540 ;;		_DELAY_us
+  1541 ;; This function is called by:
+  1542 ;;		_LCD_CmdWrite
+  1543 ;;		_lcd_DataWrite
+  1544 ;; This function uses a non-reentrant model
+  1545 ;;
+  1546                           
+  1547                           
+  1548                           ;psect for function _lcd_BusyCheck
+  1549  0715                     _lcd_BusyCheck:	
+  1550                           
+  1551                           ;incstack = 0
+  1552                           ; Regs used in _lcd_BusyCheck: [wreg+status,2+status,0+pclath+cstack]
+  1553  0715  1683               	bsf	3,5	;RP0=1, select bank1
+  1554  0716  1303               	bcf	3,6	;RP1=0, select bank1
+  1555  0717  1787               	bsf	7,7	;volatile
+  1556                           
+  1557                           ;lcd.c: 879: (((PORTD)) &= ~(1<<((0))));
+  1558  0718  30FE               	movlw	254
+  1559  0719  00F2               	movwf	??_lcd_BusyCheck
+  1560  071A  0872               	movf	??_lcd_BusyCheck,w
+  1561  071B  1283               	bcf	3,5	;RP0=0, select bank0
+  1562  071C  1303               	bcf	3,6	;RP1=0, select bank0
+  1563  071D  0588               	andwf	8,f	;volatile
+  1564                           
+  1565                           ;lcd.c: 880: (((PORTD)) |= (1<<((1))));
+  1566  071E  1488               	bsf	8,1	;volatile
+  1567  071F                     l153:	
+  1568                           ;lcd.c: 881: do
+  1569                           
+  1570                           
+  1571                           ;lcd.c: 882: {
+  1572                           ;lcd.c: 884: (((PORTD)) &= ~(1<<((2))));
+  1573  071F  30FB               	movlw	251
+  1574  0720  00F2               	movwf	??_lcd_BusyCheck
+  1575  0721  0872               	movf	??_lcd_BusyCheck,w
+  1576  0722  1283               	bcf	3,5	;RP0=0, select bank0
+  1577  0723  1303               	bcf	3,6	;RP1=0, select bank0
+  1578  0724  0588               	andwf	8,f	;volatile
+  1579                           
+  1580                           ;lcd.c: 885: DELAY_us(10);
+  1581  0725  300A               	movlw	10
+  1582  0726  00F0               	movwf	DELAY_us@us_count
+  1583  0727  3000               	movlw	0
+  1584  0728  00F1               	movwf	DELAY_us@us_count+1
+  1585  0729  120A  118A  24A1  120A  118A  	fcall	_DELAY_us
+  1586                           
+  1587                           ;lcd.c: 886: (((PORTD)) |= (1<<((2))));
+  1588  072E  1283               	bcf	3,5	;RP0=0, select bank0
+  1589  072F  1303               	bcf	3,6	;RP1=0, select bank0
+  1590  0730  1508               	bsf	8,2	;volatile
+  1591                           
+  1592                           ;lcd.c: 887: DELAY_us(10);
+  1593  0731  300A               	movlw	10
+  1594  0732  00F0               	movwf	DELAY_us@us_count
+  1595  0733  3000               	movlw	0
+  1596  0734  00F1               	movwf	DELAY_us@us_count+1
+  1597  0735  120A  118A  24A1  120A  118A  	fcall	_DELAY_us
+  1598                           
+  1599                           ;lcd.c: 888: busyflag = (((PORTC)&((1<<(7))))!=0u);
+  1600  073A  3000               	movlw	0
+  1601  073B  1283               	bcf	3,5	;RP0=0, select bank0
+  1602  073C  1303               	bcf	3,6	;RP1=0, select bank0
+  1603  073D  1B87               	btfsc	7,7	;volatile
+  1604  073E  3001               	movlw	1
+  1605  073F  00F2               	movwf	??_lcd_BusyCheck
+  1606  0740  0872               	movf	??_lcd_BusyCheck,w
+  1607  0741  00F3               	movwf	lcd_BusyCheck@busyflag
+  1608                           
+  1609                           ;lcd.c: 891: if(STK_LCDConfig.mvar_LcdMode_U8 == 4)
+  1610  0742  0827               	movf	_STK_LCDConfig+2,w
+  1611  0743  3A04               	xorlw	4
+  1612  0744  1D03               	skipz
+  1613  0745  2F5F               	goto	l977
+  1614                           
+  1615                           ;lcd.c: 892: {
+  1616                           ;lcd.c: 894: (((PORTD)) &= ~(1<<((2))));
+  1617  0746  30FB               	movlw	251
+  1618  0747  00F2               	movwf	??_lcd_BusyCheck
+  1619  0748  0872               	movf	??_lcd_BusyCheck,w
+  1620  0749  0588               	andwf	8,f	;volatile
+  1621                           
+  1622                           ;lcd.c: 895: DELAY_us(10);
+  1623  074A  300A               	movlw	10
+  1624  074B  00F0               	movwf	DELAY_us@us_count
+  1625  074C  3000               	movlw	0
+  1626  074D  00F1               	movwf	DELAY_us@us_count+1
+  1627  074E  120A  118A  24A1  120A  118A  	fcall	_DELAY_us
+  1628                           
+  1629                           ;lcd.c: 896: (((PORTD)) |= (1<<((2))));
+  1630  0753  1283               	bcf	3,5	;RP0=0, select bank0
+  1631  0754  1303               	bcf	3,6	;RP1=0, select bank0
+  1632  0755  1508               	bsf	8,2	;volatile
+  1633                           
+  1634                           ;lcd.c: 897: DELAY_us(10);
+  1635  0756  300A               	movlw	10
+  1636  0757  00F0               	movwf	DELAY_us@us_count
+  1637  0758  3000               	movlw	0
+  1638  0759  00F1               	movwf	DELAY_us@us_count+1
+  1639  075A  120A  118A  24A1  120A  118A  	fcall	_DELAY_us
+  1640  075F                     l977:	
+  1641                           
+  1642                           ;lcd.c: 898: }
+  1643                           ;lcd.c: 899: }while(busyflag);
+  1644  075F  08F3               	movf	lcd_BusyCheck@busyflag,f
+  1645  0760  1D03               	skipz
+  1646  0761  2F1F               	goto	l153
+  1647                           
+  1648                           ;lcd.c: 901: ((0x00u)? ((TRISC) |= (1<<(7))): ((TRISC) &= ~(1<<(7))));
+  1649  0762  307F               	movlw	127
+  1650  0763  00F2               	movwf	??_lcd_BusyCheck
+  1651  0764  0872               	movf	??_lcd_BusyCheck,w
+  1652  0765  1683               	bsf	3,5	;RP0=1, select bank1
+  1653  0766  1303               	bcf	3,6	;RP1=0, select bank1
+  1654  0767  0587               	andwf	7,f	;volatile
+  1655  0768  0008               	return
+  1656  0769                     __end_of_lcd_BusyCheck:	
+  1657                           
+  1658                           	psect	text13
+  1659  0497                     __ptext13:	
+  1660 ;; *************** function _KEYPAD_Init *****************
+  1661 ;; Defined at:
+  1662 ;;		line 101 in file "keypad.c"
+  1663 ;; Parameters:    Size  Location     Type
+  1664 ;;		None
+  1665 ;; Auto vars:     Size  Location     Type
+  1666 ;;		None
+  1667 ;; Return value:  Size  Location     Type
+  1668 ;;		None               void
+  1669 ;; Registers used:
+  1670 ;;		wreg
+  1671 ;; Tracked objects:
+  1672 ;;		On entry : 0/0
+  1673 ;;		On exit  : 0/0
+  1674 ;;		Unchanged: 0/0
+  1675 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1676 ;;      Params:         0       0       0       0       0
+  1677 ;;      Locals:         0       0       0       0       0
+  1678 ;;      Temps:          0       0       0       0       0
+  1679 ;;      Totals:         0       0       0       0       0
+  1680 ;;Total ram usage:        0 bytes
+  1681 ;; Hardware stack levels used:    1
+  1682 ;; This function calls:
+  1683 ;;		Nothing
+  1684 ;; This function is called by:
+  1685 ;;		_main
+  1686 ;; This function uses a non-reentrant model
+  1687 ;;
+  1688                           
+  1689                           
+  1690                           ;psect for function _KEYPAD_Init
+  1691  0497                     _KEYPAD_Init:	
+  1692                           
+  1693                           ;keypad.c: 103: TRISC= 0x0f;
+  1694                           
+  1695                           ;incstack = 0
+  1696                           ; Regs used in _KEYPAD_Init: [wreg]
+  1697  0497  300F               	movlw	15
+  1698  0498  1683               	bsf	3,5	;RP0=1, select bank1
+  1699  0499  1303               	bcf	3,6	;RP1=0, select bank1
+  1700  049A  0087               	movwf	7	;volatile
+  1701  049B  0008               	return
+  1702  049C                     __end_of_KEYPAD_Init:	
+  1703                           
+  1704                           	psect	text14
+  1705  0769                     __ptext14:	
+  1706 ;; *************** function _KEYPAD_GetKey *****************
+  1707 ;; Defined at:
+  1708 ;;		line 194 in file "keypad.c"
+  1709 ;; Parameters:    Size  Location     Type
+  1710 ;;		None
+  1711 ;; Auto vars:     Size  Location     Type
+  1712 ;;  var_keyPress    1   10[COMMON] unsigned char 
+  1713 ;; Return value:  Size  Location     Type
+  1714 ;;                  1    wreg      unsigned char 
+  1715 ;; Registers used:
+  1716 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1717 ;; Tracked objects:
+  1718 ;;		On entry : 0/0
+  1719 ;;		On exit  : 0/0
+  1720 ;;		Unchanged: 0/0
+  1721 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1722 ;;      Params:         0       0       0       0       0
+  1723 ;;      Locals:         1       0       0       0       0
+  1724 ;;      Temps:          1       0       0       0       0
+  1725 ;;      Totals:         2       0       0       0       0
+  1726 ;;Total ram usage:        2 bytes
+  1727 ;; Hardware stack levels used:    1
+  1728 ;; Hardware stack levels required when called:    3
+  1729 ;; This function calls:
+  1730 ;;		_DELAY_ms
+  1731 ;;		_KEYPAD_WaitForKeyPress
+  1732 ;;		_KEYPAD_WaitForKeyRelease
+  1733 ;;		_keypad_ScanKey
+  1734 ;; This function is called by:
+  1735 ;;		_main
+  1736 ;; This function uses a non-reentrant model
+  1737 ;;
+  1738                           
+  1739                           
+  1740                           ;psect for function _KEYPAD_GetKey
+  1741  0769                     _KEYPAD_GetKey:	
+  1742                           
+  1743                           ;keypad.c: 196: uint8_t var_keyPress_u8;
+  1744                           ;keypad.c: 198: KEYPAD_WaitForKeyRelease();
+  1745                           
+  1746                           ;incstack = 0
+  1747                           ; Regs used in _KEYPAD_GetKey: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1748  0769  120A  118A  2568  120A  118A  	fcall	_KEYPAD_WaitForKeyRelease
+  1749                           
+  1750                           ;keypad.c: 199: DELAY_ms(1);
+  1751  076E  3001               	movlw	1
+  1752  076F  00F2               	movwf	DELAY_ms@ms_count
+  1753  0770  3000               	movlw	0
+  1754  0771  00F3               	movwf	DELAY_ms@ms_count+1
+  1755  0772  120A  118A  24B7  120A  118A  	fcall	_DELAY_ms
+  1756                           
+  1757                           ;keypad.c: 201: KEYPAD_WaitForKeyPress();
+  1758  0777  120A  118A  2544  120A  118A  	fcall	_KEYPAD_WaitForKeyPress
+  1759                           
+  1760                           ;keypad.c: 202: var_keyPress_u8 = keypad_ScanKey();
+  1761  077C  120A  118A  25D6  120A  118A  	fcall	_keypad_ScanKey
+  1762  0781  00F9               	movwf	??_KEYPAD_GetKey
+  1763  0782  0879               	movf	??_KEYPAD_GetKey,w
+  1764  0783  00FA               	movwf	KEYPAD_GetKey@var_keyPress_u8
+  1765                           
+  1766                           ;keypad.c: 204: switch(var_keyPress_u8)
+  1767  0784  2FAA               	goto	l1177
+  1768  0785                     l1141:	
+  1769                           ;keypad.c: 205: {
+  1770                           ;keypad.c: 206: case 0xe7: var_keyPress_u8='0'; break;
+  1771                           
+  1772  0785  3030               	movlw	48
+  1773  0786  2FA6               	goto	L17
+  1774  0787                     l1143:	
+  1775                           ;keypad.c: 207: case 0xeb: var_keyPress_u8='1'; break;
+  1776                           
+  1777  0787  3031               	movlw	49
+  1778  0788  2FA6               	goto	L17
+  1779  0789                     l1145:	
+  1780                           ;keypad.c: 208: case 0xed: var_keyPress_u8='2'; break;
+  1781                           
+  1782  0789  3032               	movlw	50
+  1783  078A  2FA6               	goto	L17
+  1784  078B                     l1147:	
+  1785                           ;keypad.c: 209: case 0xee: var_keyPress_u8='3'; break;
+  1786                           
+  1787  078B  3033               	movlw	51
+  1788  078C  2FA6               	goto	L17
+  1789  078D                     l1149:	
+  1790                           ;keypad.c: 210: case 0xd7: var_keyPress_u8='4'; break;
+  1791                           
+  1792  078D  3034               	movlw	52
+  1793  078E  2FA6               	goto	L17
+  1794  078F                     l1151:	
+  1795                           ;keypad.c: 211: case 0xdb: var_keyPress_u8='5'; break;
+  1796                           
+  1797  078F  3035               	movlw	53
+  1798  0790  2FA6               	goto	L17
+  1799  0791                     l1153:	
+  1800                           ;keypad.c: 212: case 0xdd: var_keyPress_u8='6'; break;
+  1801                           
+  1802  0791  3036               	movlw	54
+  1803  0792  2FA6               	goto	L17
+  1804  0793                     l1155:	
+  1805                           ;keypad.c: 213: case 0xde: var_keyPress_u8='7'; break;
+  1806                           
+  1807  0793  3037               	movlw	55
+  1808  0794  2FA6               	goto	L17
+  1809  0795                     l1157:	
+  1810                           ;keypad.c: 214: case 0xb7: var_keyPress_u8='8'; break;
+  1811                           
+  1812  0795  3038               	movlw	56
+  1813  0796  2FA6               	goto	L17
+  1814  0797                     l1159:	
+  1815                           ;keypad.c: 215: case 0xbb: var_keyPress_u8='9'; break;
+  1816                           
+  1817  0797  3039               	movlw	57
+  1818  0798  2FA6               	goto	L17
+  1819  0799                     l1161:	
+  1820                           ;keypad.c: 216: case 0xbd: var_keyPress_u8='A'; break;
+  1821                           
+  1822  0799  3041               	movlw	65
+  1823  079A  2FA6               	goto	L17
+  1824  079B                     l1163:	
+  1825                           ;keypad.c: 217: case 0xbe: var_keyPress_u8='B'; break;
+  1826                           
+  1827  079B  3042               	movlw	66
+  1828  079C  2FA6               	goto	L17
+  1829  079D                     l1165:	
+  1830                           ;keypad.c: 218: case 0x77: var_keyPress_u8='C'; break;
+  1831                           
+  1832  079D  3043               	movlw	67
+  1833  079E  2FA6               	goto	L17
+  1834  079F                     l1167:	
+  1835                           ;keypad.c: 219: case 0x7b: var_keyPress_u8='D'; break;
+  1836                           
+  1837  079F  3044               	movlw	68
+  1838  07A0  2FA6               	goto	L17
+  1839  07A1                     l1169:	
+  1840                           ;keypad.c: 220: case 0x7d: var_keyPress_u8='E'; break;
+  1841                           
+  1842  07A1  3045               	movlw	69
+  1843  07A2  2FA6               	goto	L17
+  1844  07A3                     l1171:	
+  1845                           ;keypad.c: 221: case 0x7e: var_keyPress_u8='F'; break;
+  1846                           
+  1847  07A3  3046               	movlw	70
+  1848  07A4  2FA6               	goto	L17
+  1849  07A5                     l1173:	
+  1850                           ;keypad.c: 222: default : var_keyPress_u8='z'; break;
+  1851                           
+  1852  07A5  307A               	movlw	122
+  1853  07A6                     L17:	
+  1854  07A6  00F9               	movwf	??_KEYPAD_GetKey
+  1855  07A7  0879               	movf	??_KEYPAD_GetKey,w
+  1856  07A8  00FA               	movwf	KEYPAD_GetKey@var_keyPress_u8
+  1857                           
+  1858                           ;keypad.c: 223: }
+  1859  07A9  2FDC               	goto	l1179
+  1860  07AA                     l1177:	
+  1861  07AA  087A               	movf	KEYPAD_GetKey@var_keyPress_u8,w
+  1862                           
+  1863                           ; Switch size 1, requested type "space"
+  1864                           ; Number of cases is 16, Range of values is 119 to 238
+  1865                           ; switch strategies available:
+  1866                           ; Name         Instructions Cycles
+  1867                           ; simple_byte           49    25 (average)
+  1868                           ; jumptable            263     9 (fixed)
+  1869                           ;	Chosen strategy is simple_byte
+  1870  07AB  3A77               	xorlw	119	; case 119
+  1871  07AC  1903               	skipnz
+  1872  07AD  2F9D               	goto	l1165
+  1873  07AE  3A0C               	xorlw	12	; case 123
+  1874  07AF  1903               	skipnz
+  1875  07B0  2F9F               	goto	l1167
+  1876  07B1  3A06               	xorlw	6	; case 125
+  1877  07B2  1903               	skipnz
+  1878  07B3  2FA1               	goto	l1169
+  1879  07B4  3A03               	xorlw	3	; case 126
+  1880  07B5  1903               	skipnz
+  1881  07B6  2FA3               	goto	l1171
+  1882  07B7  3AC9               	xorlw	201	; case 183
+  1883  07B8  1903               	skipnz
+  1884  07B9  2F95               	goto	l1157
+  1885  07BA  3A0C               	xorlw	12	; case 187
+  1886  07BB  1903               	skipnz
+  1887  07BC  2F97               	goto	l1159
+  1888  07BD  3A06               	xorlw	6	; case 189
+  1889  07BE  1903               	skipnz
+  1890  07BF  2F99               	goto	l1161
+  1891  07C0  3A03               	xorlw	3	; case 190
+  1892  07C1  1903               	skipnz
+  1893  07C2  2F9B               	goto	l1163
+  1894  07C3  3A69               	xorlw	105	; case 215
+  1895  07C4  1903               	skipnz
+  1896  07C5  2F8D               	goto	l1149
+  1897  07C6  3A0C               	xorlw	12	; case 219
+  1898  07C7  1903               	skipnz
+  1899  07C8  2F8F               	goto	l1151
+  1900  07C9  3A06               	xorlw	6	; case 221
+  1901  07CA  1903               	skipnz
+  1902  07CB  2F91               	goto	l1153
+  1903  07CC  3A03               	xorlw	3	; case 222
+  1904  07CD  1903               	skipnz
+  1905  07CE  2F93               	goto	l1155
+  1906  07CF  3A39               	xorlw	57	; case 231
+  1907  07D0  1903               	skipnz
+  1908  07D1  2F85               	goto	l1141
+  1909  07D2  3A0C               	xorlw	12	; case 235
+  1910  07D3  1903               	skipnz
+  1911  07D4  2F87               	goto	l1143
+  1912  07D5  3A06               	xorlw	6	; case 237
+  1913  07D6  1903               	skipnz
+  1914  07D7  2F89               	goto	l1145
+  1915  07D8  3A03               	xorlw	3	; case 238
+  1916  07D9  1903               	skipnz
+  1917  07DA  2F8B               	goto	l1147
+  1918  07DB  2FA5               	goto	l1173
+  1919  07DC                     l1179:	
+  1920                           
+  1921                           ;keypad.c: 224: return(var_keyPress_u8);
+  1922  07DC  087A               	movf	KEYPAD_GetKey@var_keyPress_u8,w
+  1923  07DD  0008               	return
+  1924  07DE                     __end_of_KEYPAD_GetKey:	
+  1925                           
+  1926                           	psect	text15
+  1927  05D6                     __ptext15:	
+  1928 ;; *************** function _keypad_ScanKey *****************
+  1929 ;; Defined at:
+  1930 ;;		line 246 in file "keypad.c"
+  1931 ;; Parameters:    Size  Location     Type
+  1932 ;;		None
+  1933 ;; Auto vars:     Size  Location     Type
+  1934 ;;  var_keyPress    1    8[COMMON] unsigned char 
+  1935 ;;  var_keyScanC    1    7[COMMON] unsigned char 
+  1936 ;;  i               1    6[COMMON] unsigned char 
+  1937 ;; Return value:  Size  Location     Type
+  1938 ;;                  1    wreg      unsigned char 
+  1939 ;; Registers used:
+  1940 ;;		wreg, status,2, status,0, pclath, cstack
+  1941 ;; Tracked objects:
+  1942 ;;		On entry : 0/0
+  1943 ;;		On exit  : 0/0
+  1944 ;;		Unchanged: 0/0
+  1945 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1946 ;;      Params:         0       0       0       0       0
+  1947 ;;      Locals:         3       0       0       0       0
+  1948 ;;      Temps:          2       0       0       0       0
+  1949 ;;      Totals:         5       0       0       0       0
+  1950 ;;Total ram usage:        5 bytes
+  1951 ;; Hardware stack levels used:    1
+  1952 ;; Hardware stack levels required when called:    2
+  1953 ;; This function calls:
+  1954 ;;		_DELAY_ms
+  1955 ;; This function is called by:
+  1956 ;;		_KEYPAD_GetKey
+  1957 ;; This function uses a non-reentrant model
+  1958 ;;
+  1959                           
+  1960                           
+  1961                           ;psect for function _keypad_ScanKey
+  1962  05D6                     _keypad_ScanKey:	
+  1963                           
+  1964                           ;keypad.c: 249: uint8_t var_keyScanCode_u8 = 0xEF,i, var_keyPress_u8;
+  1965                           
+  1966                           ;incstack = 0
+  1967                           ; Regs used in _keypad_ScanKey: [wreg+status,2+status,0+pclath+cstack]
+  1968  05D6  30EF               	movlw	239
+  1969  05D7  00F4               	movwf	??_keypad_ScanKey
+  1970  05D8  0874               	movf	??_keypad_ScanKey,w
+  1971  05D9  00F7               	movwf	keypad_ScanKey@var_keyScanCode_u8
+  1972                           
+  1973                           ;keypad.c: 251: for(i=0;i<0x04;i++)
+  1974  05DA  01F6               	clrf	keypad_ScanKey@i
+  1975  05DB  3004               	movlw	4
+  1976  05DC  0276               	subwf	keypad_ScanKey@i,w
+  1977  05DD  1803               	btfsc	3,0
+  1978  05DE  2E01               	goto	l1103
+  1979  05DF                     l1089:	
+  1980                           
+  1981                           ;keypad.c: 252: {
+  1982                           ;keypad.c: 253: PORTC=var_keyScanCode_u8;
+  1983  05DF  0877               	movf	keypad_ScanKey@var_keyScanCode_u8,w
+  1984  05E0  1283               	bcf	3,5	;RP0=0, select bank0
+  1985  05E1  1303               	bcf	3,6	;RP1=0, select bank0
+  1986  05E2  0087               	movwf	7	;volatile
+  1987                           
+  1988                           ;keypad.c: 254: DELAY_ms(1);
+  1989  05E3  3001               	movlw	1
+  1990  05E4  00F2               	movwf	DELAY_ms@ms_count
+  1991  05E5  3000               	movlw	0
+  1992  05E6  00F3               	movwf	DELAY_ms@ms_count+1
+  1993  05E7  120A  118A  24B7  120A  118A  	fcall	_DELAY_ms
+  1994                           
+  1995                           ;keypad.c: 255: var_keyPress_u8=PORTC & 0x0F;
+  1996  05EC  1283               	bcf	3,5	;RP0=0, select bank0
+  1997  05ED  1303               	bcf	3,6	;RP1=0, select bank0
+  1998  05EE  0807               	movf	7,w	;volatile
+  1999  05EF  390F               	andlw	15
+  2000  05F0  00F4               	movwf	??_keypad_ScanKey
+  2001  05F1  0874               	movf	??_keypad_ScanKey,w
+  2002  05F2  00F8               	movwf	keypad_ScanKey@var_keyPress_u8
+  2003                           
+  2004                           ;keypad.c: 257: if(var_keyPress_u8!=0x0F)
+  2005  05F3  0878               	movf	keypad_ScanKey@var_keyPress_u8,w
+  2006  05F4  3A0F               	xorlw	15
+  2007  05F5  1D03               	btfss	3,2
+  2008  05F6  2E01               	goto	l1103
+  2009                           
+  2010                           ;keypad.c: 260: var_keyScanCode_u8=((var_keyScanCode_u8<<1)+0x01);
+  2011                           
+  2012                           ;keypad.c: 258: break;
+  2013  05F7  1403               	setc
+  2014  05F8  0DF7               	rlf	keypad_ScanKey@var_keyScanCode_u8,f
+  2015  05F9  3001               	movlw	1
+  2016  05FA  00F4               	movwf	??_keypad_ScanKey
+  2017  05FB  0874               	movf	??_keypad_ScanKey,w
+  2018  05FC  07F6               	addwf	keypad_ScanKey@i,f
+  2019  05FD  3004               	movlw	4
+  2020  05FE  0276               	subwf	keypad_ScanKey@i,w
+  2021  05FF  1C03               	skipc
+  2022  0600  2DDF               	goto	l1089
+  2023  0601                     l1103:	
+  2024                           
+  2025                           ;keypad.c: 261: }
+  2026                           ;keypad.c: 262: var_keyPress_u8 = var_keyPress_u8 + (var_keyScanCode_u8 & 0xf0);
+  2027  0601  30F0               	movlw	240
+  2028  0602  0577               	andwf	keypad_ScanKey@var_keyScanCode_u8,w
+  2029  0603  00F4               	movwf	??_keypad_ScanKey
+  2030  0604  0878               	movf	keypad_ScanKey@var_keyPress_u8,w
+  2031  0605  0774               	addwf	??_keypad_ScanKey,w
+  2032  0606  00F5               	movwf	??_keypad_ScanKey+1
+  2033  0607  0875               	movf	??_keypad_ScanKey+1,w
+  2034  0608  00F8               	movwf	keypad_ScanKey@var_keyPress_u8
+  2035                           
+  2036                           ;keypad.c: 263: return(var_keyPress_u8);
+  2037  0609  0878               	movf	keypad_ScanKey@var_keyPress_u8,w
+  2038  060A  0008               	return
+  2039  060B                     __end_of_keypad_ScanKey:	
+  2040                           
+  2041                           	psect	text16
+  2042  0568                     __ptext16:	
+  2043 ;; *************** function _KEYPAD_WaitForKeyRelease *****************
+  2044 ;; Defined at:
+  2045 ;;		line 118 in file "keypad.c"
+  2046 ;; Parameters:    Size  Location     Type
+  2047 ;;		None
+  2048 ;; Auto vars:     Size  Location     Type
+  2049 ;;  key             1    5[COMMON] unsigned char 
+  2050 ;; Return value:  Size  Location     Type
+  2051 ;;		None               void
+  2052 ;; Registers used:
+  2053 ;;		wreg, status,2, status,0, pclath, cstack
+  2054 ;; Tracked objects:
+  2055 ;;		On entry : 0/0
+  2056 ;;		On exit  : 0/0
+  2057 ;;		Unchanged: 0/0
+  2058 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2059 ;;      Params:         0       0       0       0       0
+  2060 ;;      Locals:         1       0       0       0       0
+  2061 ;;      Temps:          1       0       0       0       0
+  2062 ;;      Totals:         2       0       0       0       0
+  2063 ;;Total ram usage:        2 bytes
+  2064 ;; Hardware stack levels used:    1
+  2065 ;; Hardware stack levels required when called:    2
+  2066 ;; This function calls:
+  2067 ;;		_DELAY_ms
+  2068 ;; This function is called by:
+  2069 ;;		_KEYPAD_GetKey
+  2070 ;; This function uses a non-reentrant model
+  2071 ;;
+  2072                           
+  2073                           
+  2074                           ;psect for function _KEYPAD_WaitForKeyRelease
+  2075  0568                     _KEYPAD_WaitForKeyRelease:	
+  2076  0568                     l1053:	
+  2077                           ;keypad.c: 122: {
+  2078                           ;keypad.c: 123: do
+  2079                           
+  2080                           ;incstack = 0
+  2081                           ; Regs used in _KEYPAD_WaitForKeyRelease: [wreg+status,2+status,0+pclath+cstack]
+  2082                           ;keypad.c: 120: uint8_t key;
+  2083                           ;keypad.c: 121: do
+  2084                           
+  2085                           
+  2086                           ;keypad.c: 124: {
+  2087                           ;keypad.c: 125: PORTC=0x0F;
+  2088  0568  300F               	movlw	15
+  2089  0569  1283               	bcf	3,5	;RP0=0, select bank0
+  2090  056A  1303               	bcf	3,6	;RP1=0, select bank0
+  2091  056B  0087               	movwf	7	;volatile
+  2092                           
+  2093                           ;keypad.c: 126: key=PORTC & 0x0F;
+  2094  056C  0807               	movf	7,w	;volatile
+  2095  056D  390F               	andlw	15
+  2096  056E  00F4               	movwf	??_KEYPAD_WaitForKeyRelease
+  2097  056F  0874               	movf	??_KEYPAD_WaitForKeyRelease,w
+  2098  0570  00F5               	movwf	KEYPAD_WaitForKeyRelease@key
+  2099                           
+  2100                           ;keypad.c: 127: }while(key!=0x0F);
+  2101  0571  0875               	movf	KEYPAD_WaitForKeyRelease@key,w
+  2102  0572  3A0F               	xorlw	15
+  2103  0573  1D03               	skipz
+  2104  0574  2D68               	goto	l1053
+  2105                           
+  2106                           ;keypad.c: 129: DELAY_ms(1);
+  2107  0575  3001               	movlw	1
+  2108  0576  00F2               	movwf	DELAY_ms@ms_count
+  2109  0577  3000               	movlw	0
+  2110  0578  00F3               	movwf	DELAY_ms@ms_count+1
+  2111  0579  120A  118A  24B7  120A  118A  	fcall	_DELAY_ms
+  2112                           
+  2113                           ;keypad.c: 131: PORTC=0x0F;
+  2114  057E  300F               	movlw	15
+  2115  057F  1283               	bcf	3,5	;RP0=0, select bank0
+  2116  0580  1303               	bcf	3,6	;RP1=0, select bank0
+  2117  0581  0087               	movwf	7	;volatile
+  2118                           
+  2119                           ;keypad.c: 132: key=PORTC & 0x0F;
+  2120  0582  0807               	movf	7,w	;volatile
+  2121  0583  390F               	andlw	15
+  2122  0584  00F4               	movwf	??_KEYPAD_WaitForKeyRelease
+  2123  0585  0874               	movf	??_KEYPAD_WaitForKeyRelease,w
+  2124  0586  00F5               	movwf	KEYPAD_WaitForKeyRelease@key
+  2125                           
+  2126                           ;keypad.c: 133: }while(key!=0x0F);
+  2127  0587  0875               	movf	KEYPAD_WaitForKeyRelease@key,w
+  2128  0588  3A0F               	xorlw	15
+  2129  0589  1903               	btfsc	3,2
+  2130  058A  0008               	return
+  2131  058B  2D68               	goto	l1053
+  2132  058C                     __end_of_KEYPAD_WaitForKeyRelease:	
+  2133                           
+  2134                           	psect	text17
+  2135  0544                     __ptext17:	
+  2136 ;; *************** function _KEYPAD_WaitForKeyPress *****************
+  2137 ;; Defined at:
+  2138 ;;		line 151 in file "keypad.c"
+  2139 ;; Parameters:    Size  Location     Type
+  2140 ;;		None
+  2141 ;; Auto vars:     Size  Location     Type
+  2142 ;;  var_keyPress    1    5[COMMON] unsigned char 
+  2143 ;; Return value:  Size  Location     Type
+  2144 ;;		None               void
+  2145 ;; Registers used:
+  2146 ;;		wreg, status,2, status,0, pclath, cstack
+  2147 ;; Tracked objects:
+  2148 ;;		On entry : 0/0
+  2149 ;;		On exit  : 0/0
+  2150 ;;		Unchanged: 0/0
+  2151 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2152 ;;      Params:         0       0       0       0       0
+  2153 ;;      Locals:         1       0       0       0       0
+  2154 ;;      Temps:          1       0       0       0       0
+  2155 ;;      Totals:         2       0       0       0       0
+  2156 ;;Total ram usage:        2 bytes
+  2157 ;; Hardware stack levels used:    1
+  2158 ;; Hardware stack levels required when called:    2
+  2159 ;; This function calls:
+  2160 ;;		_DELAY_ms
+  2161 ;; This function is called by:
+  2162 ;;		_KEYPAD_GetKey
+  2163 ;; This function uses a non-reentrant model
+  2164 ;;
+  2165                           
+  2166                           
+  2167                           ;psect for function _KEYPAD_WaitForKeyPress
+  2168  0544                     _KEYPAD_WaitForKeyPress:	
+  2169  0544                     l1067:	
+  2170                           ;keypad.c: 155: {
+  2171                           ;keypad.c: 156: do
+  2172                           
+  2173                           ;incstack = 0
+  2174                           ; Regs used in _KEYPAD_WaitForKeyPress: [wreg+status,2+status,0+pclath+cstack]
+  2175                           ;keypad.c: 153: uint8_t var_keyPress_u8;
+  2176                           ;keypad.c: 154: do
+  2177                           
+  2178                           
+  2179                           ;keypad.c: 157: {
+  2180                           ;keypad.c: 158: PORTC=0x0F;
+  2181  0544  300F               	movlw	15
+  2182  0545  1283               	bcf	3,5	;RP0=0, select bank0
+  2183  0546  1303               	bcf	3,6	;RP1=0, select bank0
+  2184  0547  0087               	movwf	7	;volatile
+  2185                           
+  2186                           ;keypad.c: 159: var_keyPress_u8=PORTC & 0x0F;
+  2187  0548  0807               	movf	7,w	;volatile
+  2188  0549  390F               	andlw	15
+  2189  054A  00F4               	movwf	??_KEYPAD_WaitForKeyPress
+  2190  054B  0874               	movf	??_KEYPAD_WaitForKeyPress,w
+  2191  054C  00F5               	movwf	KEYPAD_WaitForKeyPress@var_keyPress_u8
+  2192                           
+  2193                           ;keypad.c: 160: }while(var_keyPress_u8==0x0F);
+  2194  054D  0875               	movf	KEYPAD_WaitForKeyPress@var_keyPress_u8,w
+  2195  054E  3A0F               	xorlw	15
+  2196  054F  1903               	skipnz
+  2197  0550  2D44               	goto	l1067
+  2198                           
+  2199                           ;keypad.c: 163: DELAY_ms(1);
+  2200  0551  3001               	movlw	1
+  2201  0552  00F2               	movwf	DELAY_ms@ms_count
+  2202  0553  3000               	movlw	0
+  2203  0554  00F3               	movwf	DELAY_ms@ms_count+1
+  2204  0555  120A  118A  24B7  120A  118A  	fcall	_DELAY_ms
+  2205                           
+  2206                           ;keypad.c: 165: PORTC=0x0F;
+  2207  055A  300F               	movlw	15
+  2208  055B  1283               	bcf	3,5	;RP0=0, select bank0
+  2209  055C  1303               	bcf	3,6	;RP1=0, select bank0
+  2210  055D  0087               	movwf	7	;volatile
+  2211                           
+  2212                           ;keypad.c: 166: var_keyPress_u8=PORTC & 0x0F;
+  2213  055E  0807               	movf	7,w	;volatile
+  2214  055F  390F               	andlw	15
+  2215  0560  00F4               	movwf	??_KEYPAD_WaitForKeyPress
+  2216  0561  0874               	movf	??_KEYPAD_WaitForKeyPress,w
+  2217  0562  00F5               	movwf	KEYPAD_WaitForKeyPress@var_keyPress_u8
+  2218                           
+  2219                           ;keypad.c: 168: }while(var_keyPress_u8==0x0F);
+  2220  0563  0875               	movf	KEYPAD_WaitForKeyPress@var_keyPress_u8,w
+  2221  0564  3A0F               	xorlw	15
+  2222  0565  1D03               	btfss	3,2
+  2223  0566  0008               	return
+  2224  0567  2D44               	goto	l1067
+  2225  0568                     __end_of_KEYPAD_WaitForKeyPress:	
+  2226                           
+  2227                           	psect	text18
+  2228  04B7                     __ptext18:	
+  2229 ;; *************** function _DELAY_ms *****************
+  2230 ;; Defined at:
+  2231 ;;		line 76 in file "delay.c"
+  2232 ;; Parameters:    Size  Location     Type
+  2233 ;;  ms_count        2    2[COMMON] unsigned int 
+  2234 ;; Auto vars:     Size  Location     Type
+  2235 ;;		None
+  2236 ;; Return value:  Size  Location     Type
+  2237 ;;		None               void
+  2238 ;; Registers used:
+  2239 ;;		wreg, status,2, status,0, pclath, cstack
+  2240 ;; Tracked objects:
+  2241 ;;		On entry : 0/0
+  2242 ;;		On exit  : 0/0
+  2243 ;;		Unchanged: 0/0
+  2244 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2245 ;;      Params:         2       0       0       0       0
+  2246 ;;      Locals:         0       0       0       0       0
+  2247 ;;      Temps:          0       0       0       0       0
+  2248 ;;      Totals:         2       0       0       0       0
+  2249 ;;Total ram usage:        2 bytes
+  2250 ;; Hardware stack levels used:    1
+  2251 ;; Hardware stack levels required when called:    1
+  2252 ;; This function calls:
+  2253 ;;		_DELAY_us
+  2254 ;; This function is called by:
+  2255 ;;		_KEYPAD_WaitForKeyRelease
+  2256 ;;		_KEYPAD_WaitForKeyPress
+  2257 ;;		_KEYPAD_GetKey
+  2258 ;;		_keypad_ScanKey
+  2259 ;;		_LCD_Init
+  2260 ;;		_lcd_Reset
+  2261 ;;		_DELAY_sec
+  2262 ;; This function uses a non-reentrant model
+  2263 ;;
+  2264                           
+  2265                           
+  2266                           ;psect for function _DELAY_ms
+  2267  04B7                     _DELAY_ms:	
+  2268  04B7                     l1033:	
+  2269                           ;delay.c: 78: while(ms_count!=0)
+  2270                           
+  2271                           ;incstack = 0
+  2272                           ; Regs used in _DELAY_ms: [wreg+status,2+status,0+pclath+cstack]
+  2273                           
+  2274  04B7  0873               	movf	DELAY_ms@ms_count+1,w
+  2275  04B8  0472               	iorwf	DELAY_ms@ms_count,w
+  2276  04B9  1903               	btfsc	3,2
+  2277  04BA  0008               	return
+  2278                           
+  2279                           ;delay.c: 79: {
+  2280                           ;delay.c: 80: DELAY_us(300u);
+  2281  04BB  302C               	movlw	44
+  2282  04BC  00F0               	movwf	DELAY_us@us_count
+  2283  04BD  3001               	movlw	1
+  2284  04BE  00F1               	movwf	DELAY_us@us_count+1
+  2285  04BF  120A  118A  24A1  120A  118A  	fcall	_DELAY_us
+  2286                           
+  2287                           ;delay.c: 81: ms_count--;
+  2288  04C4  3001               	movlw	1
+  2289  04C5  02F2               	subwf	DELAY_ms@ms_count,f
+  2290  04C6  3000               	movlw	0
+  2291  04C7  1C03               	skipc
+  2292  04C8  03F3               	decf	DELAY_ms@ms_count+1,f
+  2293  04C9  02F3               	subwf	DELAY_ms@ms_count+1,f
+  2294  04CA  2CB7               	goto	l1033
+  2295  04CB                     __end_of_DELAY_ms:	
+  2296                           
+  2297                           	psect	text19
+  2298  04A1                     __ptext19:	
+  2299 ;; *************** function _DELAY_us *****************
+  2300 ;; Defined at:
+  2301 ;;		line 55 in file "delay.c"
+  2302 ;; Parameters:    Size  Location     Type
+  2303 ;;  us_count        2    0[COMMON] unsigned int 
+  2304 ;; Auto vars:     Size  Location     Type
+  2305 ;;		None
+  2306 ;; Return value:  Size  Location     Type
+  2307 ;;		None               void
+  2308 ;; Registers used:
+  2309 ;;		wreg, status,2, status,0
+  2310 ;; Tracked objects:
+  2311 ;;		On entry : 0/0
+  2312 ;;		On exit  : 0/0
+  2313 ;;		Unchanged: 0/0
+  2314 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2315 ;;      Params:         2       0       0       0       0
+  2316 ;;      Locals:         0       0       0       0       0
+  2317 ;;      Temps:          0       0       0       0       0
+  2318 ;;      Totals:         2       0       0       0       0
+  2319 ;;Total ram usage:        2 bytes
+  2320 ;; Hardware stack levels used:    1
+  2321 ;; This function calls:
+  2322 ;;		Nothing
+  2323 ;; This function is called by:
+  2324 ;;		_DELAY_ms
+  2325 ;;		_lcd_BusyCheck
+  2326 ;;		_lcd_Reset
+  2327 ;;		_lcd_SendCmdSignals
+  2328 ;;		_lcd_SendDataSignals
+  2329 ;; This function uses a non-reentrant model
+  2330 ;;
+  2331                           
+  2332                           
+  2333                           ;psect for function _DELAY_us
+  2334  04A1                     _DELAY_us:	
+  2335  04A1                     l951:	
+  2336                           ;delay.c: 57: while(us_count!=0)
+  2337                           
+  2338                           ;incstack = 0
+  2339                           ; Regs used in _DELAY_us: [wreg+status,2+status,0]
+  2340                           
+  2341  04A1  0871               	movf	DELAY_us@us_count+1,w
+  2342  04A2  0470               	iorwf	DELAY_us@us_count,w
+  2343  04A3  1903               	btfsc	3,2
+  2344  04A4  0008               	return
+  2345                           
+  2346                           ;delay.c: 58: {
+  2347                           ;delay.c: 59: us_count--;
+  2348  04A5  3001               	movlw	1
+  2349  04A6  02F0               	subwf	DELAY_us@us_count,f
+  2350  04A7  3000               	movlw	0
+  2351  04A8  1C03               	skipc
+  2352  04A9  03F1               	decf	DELAY_us@us_count+1,f
+  2353  04AA  02F1               	subwf	DELAY_us@us_count+1,f
+  2354  04AB  2CA1               	goto	l951
+  2355  04AC                     __end_of_DELAY_us:	
+  2356  007E                     btemp	set	126	;btemp
+  2357  007E                     wtemp	set	126
+  2358  007E                     wtemp0	set	126
+  2359  0080                     wtemp1	set	128
+  2360  0082                     wtemp2	set	130
+  2361  0084                     wtemp3	set	132
+  2362  0086                     wtemp4	set	134
+  2363  0088                     wtemp5	set	136
+  2364  007F                     wtemp6	set	127
+  2365  007E                     ttemp	set	126
+  2366  007E                     ttemp0	set	126
+  2367  0081                     ttemp1	set	129
+  2368  0084                     ttemp2	set	132
+  2369  0087                     ttemp3	set	135
+  2370  007F                     ttemp4	set	127
+  2371  007E                     ltemp	set	126
+  2372  007E                     ltemp0	set	126
+  2373  0082                     ltemp1	set	130
+  2374  0086                     ltemp2	set	134
+  2375  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        5
+    BSS         2
+    Persistent  3
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80      1      11
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_LCD_Init
+    _lcd_Reset->_DELAY_ms
+    _LCD_Clear->_LCD_GoToLine
+    _LCD_GoToLine->_LCD_CmdWrite
+    _LCD_DisplayChar->_LCD_GoToNextLine
+    _lcd_DataWrite->_lcd_BusyCheck
+    _lcd_SendDataSignals->_DELAY_us
+    _LCD_GoToNextLine->_LCD_CmdWrite
+    _LCD_CmdWrite->_lcd_BusyCheck
+    _lcd_SendCmdSignals->_DELAY_us
+    _lcd_BusyCheck->_DELAY_us
+    _KEYPAD_GetKey->_keypad_ScanKey
+    _keypad_ScanKey->_DELAY_ms
+    _KEYPAD_WaitForKeyRelease->_DELAY_ms
+    _KEYPAD_WaitForKeyPress->_DELAY_ms
+    _DELAY_ms->_DELAY_us
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0   14020
+                                             12 COMMON     2     2      0
+                                              0 BANK0      1     1      0
+                      _KEYPAD_GetKey
+                        _KEYPAD_Init
+                    _LCD_DisplayChar
+                           _LCD_Init
+ ---------------------------------------------------------------------------------
+ (1) _LCD_Init                                             4     2      2    7241
+                                              8 COMMON     4     2      2
+                           _DELAY_ms
+                          _LCD_Clear
+                       _LCD_CmdWrite
+                          _lcd_Reset
+ ---------------------------------------------------------------------------------
+ (2) _lcd_Reset                                            0     0      0    2141
+                           _DELAY_ms
+                           _DELAY_us
+                 _lcd_SendCmdSignals
+                     _lcd_SendNibble
+ ---------------------------------------------------------------------------------
+ (2) _LCD_Clear                                            0     0      0    2632
+                       _LCD_CmdWrite
+                       _LCD_GoToLine
+ ---------------------------------------------------------------------------------
+ (3) _LCD_GoToLine                                         2     2      0    1349
+                                              6 COMMON     2     2      0
+                       _LCD_CmdWrite
+ ---------------------------------------------------------------------------------
+ (1) _LCD_DisplayChar                                      2     2      0    2632
+                                              7 COMMON     2     2      0
+                   _LCD_GoToNextLine
+                      _lcd_DataWrite
+ ---------------------------------------------------------------------------------
+ (2) _lcd_DataWrite                                        2     2      0    1283
+                                              4 COMMON     2     2      0
+                      _lcd_BusyCheck
+                _lcd_SendDataSignals
+                     _lcd_SendNibble
+ ---------------------------------------------------------------------------------
+ (3) _lcd_SendDataSignals                                  1     1      0     553
+                                              2 COMMON     1     1      0
+                           _DELAY_us
+ ---------------------------------------------------------------------------------
+ (2) _LCD_GoToNextLine                                     1     1      0    1283
+                                              6 COMMON     1     1      0
+                       _LCD_CmdWrite
+ ---------------------------------------------------------------------------------
+ (2) _LCD_CmdWrite                                         2     2      0    1283
+                                              4 COMMON     2     2      0
+                      _lcd_BusyCheck
+                 _lcd_SendCmdSignals
+                     _lcd_SendNibble
+ ---------------------------------------------------------------------------------
+ (3) _lcd_SendNibble                                       2     2      0      88
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (3) _lcd_SendCmdSignals                                   1     1      0     553
+                                              2 COMMON     1     1      0
+                           _DELAY_us
+ ---------------------------------------------------------------------------------
+ (3) _lcd_BusyCheck                                        2     2      0     576
+                                              2 COMMON     2     2      0
+                           _DELAY_us
+ ---------------------------------------------------------------------------------
+ (1) _KEYPAD_Init                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _KEYPAD_GetKey                                        2     2      0    4124
+                                              9 COMMON     2     2      0
+                           _DELAY_ms
+             _KEYPAD_WaitForKeyPress
+           _KEYPAD_WaitForKeyRelease
+                     _keypad_ScanKey
+ ---------------------------------------------------------------------------------
+ (2) _keypad_ScanKey                                       5     5      0    1129
+                                              4 COMMON     5     5      0
+                           _DELAY_ms
+ ---------------------------------------------------------------------------------
+ (2) _KEYPAD_WaitForKeyRelease                             2     2      0     993
+                                              4 COMMON     2     2      0
+                           _DELAY_ms
+ ---------------------------------------------------------------------------------
+ (2) _KEYPAD_WaitForKeyPress                               2     2      0     993
+                                              4 COMMON     2     2      0
+                           _DELAY_ms
+ ---------------------------------------------------------------------------------
+ (3) _DELAY_ms                                             2     0      2     947
+                                              2 COMMON     2     0      2
+                           _DELAY_us
+ ---------------------------------------------------------------------------------
+ (4) _DELAY_us                                             2     0      2     553
+                                              0 COMMON     2     0      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _KEYPAD_GetKey
+     _DELAY_ms
+       _DELAY_us
+     _KEYPAD_WaitForKeyPress
+       _DELAY_ms
+         _DELAY_us
+     _KEYPAD_WaitForKeyRelease
+       _DELAY_ms
+         _DELAY_us
+     _keypad_ScanKey
+       _DELAY_ms
+         _DELAY_us
+   _KEYPAD_Init
+   _LCD_DisplayChar
+     _LCD_GoToNextLine
+       _LCD_CmdWrite
+         _lcd_BusyCheck
+           _DELAY_us
+         _lcd_SendCmdSignals
+           _DELAY_us
+         _lcd_SendNibble
+     _lcd_DataWrite
+       _lcd_BusyCheck
+         _DELAY_us
+       _lcd_SendDataSignals
+         _DELAY_us
+       _lcd_SendNibble
+   _LCD_Init
+     _DELAY_ms
+       _DELAY_us
+     _LCD_Clear
+       _LCD_CmdWrite
+         _lcd_BusyCheck
+           _DELAY_us
+         _lcd_SendCmdSignals
+           _DELAY_us
+         _lcd_SendNibble
+       _LCD_GoToLine
+         _LCD_CmdWrite
+           _lcd_BusyCheck
+             _DELAY_us
+           _lcd_SendCmdSignals
+             _DELAY_us
+           _lcd_SendNibble
+     _LCD_CmdWrite
+       _lcd_BusyCheck
+         _DELAY_us
+       _lcd_SendCmdSignals
+         _DELAY_us
+       _lcd_SendNibble
+     _lcd_Reset
+       _DELAY_ms
+         _DELAY_us
+       _DELAY_us
+       _lcd_SendCmdSignals
+         _DELAY_us
+       _lcd_SendNibble
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      1       B       5       13.8%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      E       E       1      100.0%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      19      12        0.0%
+ABS                  0      0      19       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.32 build 58300 
+Symbol Table                                                                                   Wed Aug 05 22:44:30 2015
+
+       __end_of_KEYPAD_WaitForKeyPress 0568             ??_KEYPAD_WaitForKeyRelease 0074  
+                          __CFG_CP$OFF 0000                          ?_LCD_CmdWrite 0070  
+                        ?_LCD_GoToLine 0070                            __CFG_LVP$ON 0000  
+                                  l114 070B                                    l153 071F  
+                                  l951 04A1                                    l977 075F  
+                                  l995 05B7                                    l997 05BD  
+                                  u405 0631                           __CFG_CPD$OFF 0000  
+                                  u535 0667                                    fsr0 0004  
+                                  indf 0000                          _STK_LCDConfig 0025  
+                         __CFG_FOSC$HS 0000                           ?_KEYPAD_Init 0070  
+              __end_of_LCD_DisplayChar 0544                                   l1001 05C1  
+                                 l1003 05C5                                   l1013 05D1  
+                                 l1103 0601                                   l1007 05C9  
+                                 l1023 061D                                   l1033 04B7  
+                                 l1009 05CD                                   l1201 06FA  
+                                 l1123 04ED                                   l1211 0530  
+                                 l1053 0568                                   l1141 0785  
+                                 l1133 0653                                   l1213 0535  
+                                 l1151 078F                                   l1143 0787  
+                                 l1231 059F                                   l1161 0799  
+                                 l1153 0791                                   l1145 0789  
+                                 l1067 0544                                   l1171 07A3  
+                                 l1163 079B                                   l1155 0793  
+                                 l1147 078B                                   l1173 07A5  
+                                 l1165 079D                                   l1157 0795  
+                                 l1149 078D                                   l1167 079F  
+                                 l1159 0797                                   l1089 05DF  
+                                 l1169 07A1                                   l1177 07AA  
+                                 l1179 07DC                                   l1195 06E9  
+                         __CFG_WRT$OFF 0000                                   _main 058C  
+                   __size_of_LCD_Clear 000B                                   btemp 007E  
+                                 ltemp 007E                                   start 0000  
+                                 ttemp 007E                                   wtemp 007E  
+                     __end_of_DELAY_ms 04CB                       __end_of_DELAY_us 04AC  
+                     ??_keypad_ScanKey 0074           KEYPAD_GetKey@var_keyPress_u8 007A  
+                       ??_LCD_CmdWrite 0074                          _KEYPAD_GetKey 0769  
+                       ??_LCD_GoToLine 0076                       __end_of_LCD_Init 0715  
+                     lcd_DataWrite@dat 0075                                  ?_main 0070  
+                        __CFG_WDTE$OFF 0000                                  _PORTC 0007  
+                                _PORTD 0008                                  _TRISC 0087  
+                                _TRISD 0088                         __CFG_BOREN$OFF 0000  
+                                ltemp0 007E                                  ltemp1 0082  
+                                ltemp2 0086                                  ltemp3 0080  
+                                ttemp0 007E                                  ttemp1 0081  
+                                ttemp2 0084                                  ttemp3 0087  
+                                ttemp4 007F                                  status 0003  
+                                wtemp0 007E                                  wtemp1 0080  
+                                wtemp2 0082                                  wtemp3 0084  
+                                wtemp4 0086                                  wtemp5 0088  
+                                wtemp6 007F                        __initialization 07DE  
+                       ?_KEYPAD_GetKey 0070                           __end_of_main 05B0  
+            LCD_CmdWrite@var_lcdCmd_u8 0075                                 ??_main 007C  
+          __size_of_lcd_SendCmdSignals 0019                      __end_of_LCD_Clear 04B7  
+                     ?_LCD_DisplayChar 0070                      lcd_SendNibble@var 0071  
+                lcd_BusyCheck@busyflag 0073                         __CFG_PWRTE$OFF 0000  
+                     DELAY_ms@ms_count 0072                      ?_LCD_GoToNextLine 0070  
+                            ?_DELAY_ms 0072                              ?_DELAY_us 0070  
+                   ??_LCD_GoToNextLine 0076                   __end_of_LCD_CmdWrite 0641  
+                 __size_of_KEYPAD_Init 0005                   __end_of_LCD_GoToLine 04E0  
+              __end_of__initialization 07FC                              ?_LCD_Init 0078  
+                      ??_KEYPAD_GetKey 0079                         __pcstackCOMMON 0070  
+                         __pidataBANK0 049C                  __end_of_lcd_DataWrite 0677  
+                   __size_of_lcd_Reset 004F           __size_of_lcd_SendDataSignals 0016  
+                           ??_DELAY_ms 0074                             ??_DELAY_us 0072  
+        LCD_DisplayChar@var_lcdData_u8 0078                             __pbssBANK0 0028  
+                __end_of_lcd_BusyCheck 0769                             ??_LCD_Init 007A  
+                           __pmaintext 058C      __size_of_KEYPAD_WaitForKeyRelease 0024  
+            ?_KEYPAD_WaitForKeyRelease 0070                       DELAY_us@us_count 0070  
+                    __end_of_lcd_Reset 06C6                __size_of_lcd_SendNibble 0026  
+                              __ptext1 06C6                                __ptext2 0677  
+                              __ptext3 04AC                                __ptext4 04CB  
+                              __ptext5 0525                                __ptext6 0641  
+                              __ptext7 04F6                                __ptext8 04E0  
+                              __ptext9 060B                  __size_of_LCD_CmdWrite 0036  
+                __size_of_LCD_GoToLine 0015                              _LCD_Clear 04AC  
+                              main@key 002A                   end_of_initialization 07FC  
+             ??_KEYPAD_WaitForKeyPress 0074       keypad_ScanKey@var_keyScanCode_u8 0077  
+           __end_of_lcd_SendCmdSignals 0525                           _LCD_CmdWrite 060B  
+                         _LCD_GoToLine 04CB                __size_of_keypad_ScanKey 0035  
+                           ?_LCD_Clear 0070          LCD_GoToLine@var_lineNumber_u8 0077  
+                    __size_of_DELAY_ms 0014                      __size_of_DELAY_us 000B  
+             __size_of_LCD_DisplayChar 001F                      __size_of_LCD_Init 004F  
+            __size_of_LCD_GoToNextLine 0016                    _lcd_SendDataSignals 04F6  
+          KEYPAD_WaitForKeyRelease@key 0075         LCD_Init@var_MaxCharsPerLine_u8 0079  
+             _ARR_LcdLineNumAddress_U8 0020                    start_initialization 07DE  
+                 ?_lcd_SendDataSignals 0070                          ??_KEYPAD_Init 0070  
+             _VAR_LcdTrackCursorPos_U8 0028        __size_of_KEYPAD_WaitForKeyPress 0024  
+                __end_of_KEYPAD_GetKey 07DE                            __pdataBANK0 0020  
+     __end_of_KEYPAD_WaitForKeyRelease 058C                         _lcd_SendNibble 05B0  
+          LCD_Init@var_lcdNoOfLines_u8 0078                  ??_lcd_SendDataSignals 0072  
+                            ___latbits 0002                          __pcstackBANK0 002A  
+                          ??_LCD_Clear 0078                 LCD_Init@var_lcdMode_u8 007B  
+               __size_of_lcd_DataWrite 0036                    __end_of_KEYPAD_Init 049C  
+                            __pnvBANK0 0025                 __end_of_lcd_SendNibble 05D6  
+                            _lcd_Reset 0677                      ??_LCD_DisplayChar 0077  
+               __size_of_lcd_BusyCheck 0054  KEYPAD_WaitForKeyPress@var_keyPress_u8 0075  
+                       _keypad_ScanKey 05D6                 _KEYPAD_WaitForKeyPress 0544  
+                             _DELAY_ms 04B7                               _DELAY_us 04A1  
+        keypad_ScanKey@var_keyPress_u8 0078                               _LCD_Init 06C6  
+                     _LCD_GoToNextLine 04E0                        ?_lcd_SendNibble 0070  
+                           ?_lcd_Reset 0070                          _lcd_DataWrite 0641  
+               __end_of_keypad_ScanKey 060B               _KEYPAD_WaitForKeyRelease 0568  
+                          _KEYPAD_Init 0497                     _lcd_SendCmdSignals 050C  
+                        _lcd_BusyCheck 0715                    ?_lcd_SendCmdSignals 0070  
+                       ?_lcd_DataWrite 0070                        ?_keypad_ScanKey 0070  
+                 ??_lcd_SendCmdSignals 0072                        keypad_ScanKey@i 0076  
+                             __ptext10 05B0                               __ptext11 050C  
+                             __ptext12 0715                               __ptext13 0497  
+                             __ptext14 0769                               __ptext15 05D6  
+                             __ptext16 0568                               __ptext17 0544  
+                             __ptext18 04B7                               __ptext19 04A1  
+                       ?_lcd_BusyCheck 0070                          __size_of_main 0024  
+                          ??_lcd_Reset 0074                 _VAR_LcdTrackLineNum_U8 0029  
+                      _LCD_DisplayChar 0525                        ??_lcd_DataWrite 0074  
+          __end_of_lcd_SendDataSignals 050C                ?_KEYPAD_WaitForKeyPress 0070  
+             __end_of_LCD_GoToNextLine 04F6                        ??_lcd_BusyCheck 0072  
+               __size_of_KEYPAD_GetKey 0075                       ??_lcd_SendNibble 0070  
